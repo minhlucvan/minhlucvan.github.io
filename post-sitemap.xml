@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc></loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>2016/11/26/Golang-1-Gioi-thieu-ve-Golang/</loc>
+        <lastmod>2019-10-04T22:55:56.732Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/06/20/gioi-thieu-Linked-Data-va-Semantic-web/</loc>
+        <lastmod>2019-10-04T22:54:16.459Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/06/13/Mot-button-tri-gia-300-trieu-do-Cai-nhin-khac-ve-UI-va-chuc-nang/</loc>
+        <lastmod>2019-10-04T22:52:00.465Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/06/12/Hello-world/</loc>
+        <lastmod>2019-10-04T22:49:34.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/06/21/tim-hieu-Method-Chainning-trong-Javascript/</loc>
+        <lastmod>2019-10-04T22:37:01.937Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/06/28/gulp-for-dummies-dung-gulp-ngay-va-luon/</loc>
+        <lastmod>2019-10-04T22:34:40.773Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/06/28/SASS-LESS-viet-CSS-chua-bao-gio-de-dang-nhu-the/</loc>
+        <lastmod>2019-10-04T22:29:32.560Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/06/28/REDUX-tuoi-tre-tai-cao/</loc>
+        <lastmod>2019-10-04T22:28:45.883Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/06/30/Javascript-module-pattern-viet-JS-phong-cach-huong-mo-dun/</loc>
+        <lastmod>2019-10-04T22:24:12.853Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/07/06/quy-trinh-lam-mot-project-D/</loc>
+        <lastmod>2019-10-04T22:22:11.985Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/07/24/TED-may-tinh-sang-tao-nhu-the-nao/</loc>
+        <lastmod>2019-10-04T22:16:37.031Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/07/24/Design-vs-User-Experience-nhung-con-duong-tat/</loc>
+        <lastmod>2019-10-04T22:09:27.295Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/07/26/Yahoo-360-cai-chet-cua-mot-con-thien-nga/</loc>
+        <lastmod>2019-10-04T22:05:53.899Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/08/01/khong-ai-la-vo-dung/</loc>
+        <lastmod>2019-10-04T22:03:05.517Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/08/06/BOOK-ca-phe-cung-Tony-ly-ca-phe-dam-da-huong-vi-cuoc-song/</loc>
+        <lastmod>2019-10-04T21:58:19.087Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/08/06/viet-mot-chuong-trinh-cho-phep-cai-plugin-trong-java-nhu-the-nao/</loc>
+        <lastmod>2019-10-04T21:56:30.122Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/08/07/Flux-la-cai-quai-gi-nhi/</loc>
+        <lastmod>2019-10-04T21:54:43.428Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/09/21/Viet-JS-theo-phong-cach-huong-module-phan-2/</loc>
+        <lastmod>2019-10-04T21:50:36.329Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/09/21/Tai-sao-Web-Accessibility-lai-quan-trong/</loc>
+        <lastmod>2019-10-04T21:50:06.268Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/10/21/React-Redux-Rxjs-AMAZING/</loc>
+        <lastmod>2019-10-04T21:36:30.095Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/10/21/SEO-vs-React-Google-thong-minh-hon-ban-tuong/</loc>
+        <lastmod>2019-10-04T21:35:49.727Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/11/07/javascript-monthly-Oct-2016/</loc>
+        <lastmod>2019-10-04T21:29:09.736Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/11/20/Sandbox-1-awesome-submit-button/</loc>
+        <lastmod>2019-10-04T21:26:37.140Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/11/29/Callback-hell-va-nhung-cach-giai-quet/</loc>
+        <lastmod>2019-10-04T21:10:50.874Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/12/06/NOSQL-co-dong-nghia-voi-NO-Ijection/</loc>
+        <lastmod>2019-10-04T21:05:08.245Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/12/15/Thoc-sau-vao-JS-Null-vs-undefined/</loc>
+        <lastmod>2019-10-04T21:02:10.755Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/12/19/lam-the-nao-de-code-javascript-co-the-test-duoc/</loc>
+        <lastmod>2019-10-04T21:01:36.922Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2017/01/07/Nhung-buc-anh-day-thu-vi-boi-Lucas-Levitan/</loc>
+        <lastmod>2019-10-02T22:30:28.065Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2017/03/29/Dependency-Injection-xuong-song-cua-Angular-2-x/</loc>
+        <lastmod>2019-10-02T22:30:23.374Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2016/11/18/Ban-da-thuc-su-hieu-generator-function/</loc>
+        <lastmod>2019-10-02T22:26:05.839Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->

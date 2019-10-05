@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery validate</title>
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <style>
+        .message{
+            padding: 5px;
+        }
+        .message.message-success{
+            color: green;
+        }
+        .message.message-error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Jquery validate</h1><br><br>
+    <form id="demo-form" role="form">
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="text" class="form-control" id="email" placeholder="yourname@example.com">
+            <div class="form-message">
+                <div class="message message-error"  for="email">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone number:</label>
+            <input type="text" class="form-control" id="phone" placeholder="0969407641">
+            <div class="form-message">
+                <div class="message message-error"  for="phone">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="date">date:</label>
+            <input type="text" class="form-control" id="date" placeholder="dd/mm/yyyy">
+            <div class="form-message">
+                <div class="message message-error" for="date">
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-default" id="run-validate">Validate</button>
+    </form>
+</div>
+
+<script type="text/javascript" src="../vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./js/jqValidate.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>

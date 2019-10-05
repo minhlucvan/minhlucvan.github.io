@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery collapse</title>
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <style>
+        .panel-title a{
+            color: blue;
+        }
+        .panel-title{
+            position: relative;
+        }
+        .jqcollapse .panel-title:after{
+            content: "\02795";
+            position: absolute;
+            right: 0;
+        }
+
+        .jqcollapse .panel.open .panel-title:after{
+            content: "\2796";
+        }
+        .jqcollapse .panel-body{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>jquery collapse demo</h1><br><br>
+    <div class="panel panel-default">
+        <div class="panel-body jqcollapse">
+
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <a class="open-collpanse" href="#panel-1">
+                            Collapsible Group Item #1
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-body" id="panel-1">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                    labore sustainable VHS.
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <a class="open-collpanse" href="#panel-2">
+                            Collapsible Group Item #2
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-body" id="panel-2">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                    labore sustainable VHS.
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <a class="open-collpanse" href="#panel-3">
+                            Collapsible Group Item #3
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-body" id="panel-3">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                    wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+                    assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+                    sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+                    labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="js/jqcollpanse.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>

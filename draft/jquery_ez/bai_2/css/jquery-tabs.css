@@ -1,0 +1,37 @@
+
+.jquery-tabs{
+
+}
+.jquery-tabs .tab-nav{
+    margin-bottom: -2px;
+}
+
+.jquery-tabs .tab-nav .show-tab{
+    box-shadow: none;
+    background-color: #d4d4d4;
+}
+.jquery-tabs .tab-nav .show-tab:first-child{
+    border-bottom-left-radius: 0;
+}
+.jquery-tabs .tab-nav .show-tab.active{
+    border-bottom: transparent;
+    background-color: #ffffff;
+}
+
+.jquery-tabs .tab-body{
+    position: relative;
+    padding: 15px;
+    border: solid 1px #cccccc;
+    border-radius: 4px;
+    border-top-left-radius: 0;
+
+}
+
+.jquery-tabs .tab-body .tab{
+    display: none;
+    top: 0;
+}
+
+.jquery-tabs .tab-body .tab.active{
+    display: block;
+}
