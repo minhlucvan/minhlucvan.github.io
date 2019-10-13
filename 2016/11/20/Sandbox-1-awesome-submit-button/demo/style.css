@@ -1,1 +1,283 @@
-boby{width:100%;padding:0;margin:0}.sandbox{padding:30px;padding-left:10px;background-color:#edeaed}form{width:100%;margin-left:auto;margin-right:auto;padding-left:30px}.awesome-submit{padding:0;border-radius:50px;text-align:center;line-height:70px;font-size:22px;color:#fff;cursor:pointer;box-shadow:none;border:none;z-index:40;-webkit-transition:ease-in 4s;transition:ease-in 4s}.awesome-submit .inner{position:relative;height:70px}.awesome-submit:active,.awesome-submit:active .inner,.awesome-submit:focus,.awesome-submit:focus .inner{outline:0;box-shadow:0 0 0 rgba(0,0,0,.5)}.awesome-submit .back,.awesome-submit .front{overflow:hidden;border-radius:50px}.awesome-submit .back,.awesome-submit .content,.awesome-submit .front,.awesome-submit .inner{transition:all 1s}.awesome-submit .front{position:absolute;top:0;left:0;white-space:nowrap}.awesome-submit .back{background-color:#fff;height:100px}.awesome-submit .back .content{display:inline-block}.awesome-submit .back i:last-child{margin-left:6px}.awesome-submit .front{padding:0 40px;background-color:#52475b;box-shadow:2px 3px 10px rgba(0,0,0,.5);white-space:nowrap}.awesome-submit .front.circle{padding:0;width:70px}@keyframes float-right{from{transform:translateX(-105px)}to{transform:translateX(0)}}.awesome-submit .primary .front .icon-arrow{display:inline-block;animation:float-right .6s ease-out 0s 1 normal}.awesome-submit .front.circle .content{display:none}.awesome-submit .front .content{display:inline}.awesome-submit .back{height:100%;background-color:#fff;color:#494151;padding:0 40px 0 90px;white-space:nowrap}25%{transform:translateY(-10px)}50%{transform:translateY(0)}25%{transform:translateY(0)}50%{transform:translateY(-10px)}75%{transform:translateY(0)}100%{transform:translateY(0)}50%{transform:translateY(0)}75%{transform:translateY(-10px)}100%{transform:translateY(0)}.icon-bounce{font-family:fontello;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;text-align:center;font-variant:normal;text-transform:none;line-height:1em}.icon-bounce span:first-child{animation:bounching1 2s linear 0s infinite normal}.icon-bounce span:nth-child(2){animation:bounching2 2s linear 0s infinite normal}.icon-bounce span:last-child{animation:bounching3 2s linear 0s infinite normal}.icon-bounce span{width:auto;display:inline-block;padding:0 2px;margin:0;font-weight:700}//progress bar .awesome-submit .process .back{padding-left:72px;padding-right:15px}.awesome-submit .process .content{background-color:#fff}.awesome-submit .process .content .progress-bar{position:relative;width:270px;height:8px;background-color:#e8e8e9;line-height:70px;display:inline-block;vertical-align:middle;border-radius:4px}.awesome-submit .process .content .progress-bar .value{content:" ";position:absolute;background-color:#b7e88e;width:0%;height:100%;border-radius:4px;transition:width .1s}.awesome-submit .process .back i[class^=icon-]{line-height:1;overflow:hidden;vertical-align:middle;font-size:22px;color:#dedbdb;padding:0 4px;transition:color .1s}.awesome-submit .process .back i[class^=icon-]:hover{color:#71647b}// error .awesome-submit .error .front{background-color:#e0444c}.awesome-submit .error .front span{display:none}.awesome-submit .error .back{color:#e0444c}.awesome-submit .error .back i:last-child{display:none},//success .awesome-submit .success .front{display:none}.awesome-submit .success .back{padding-right:70px;color:#69c719}
+boby{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.sandbox{
+  padding: 30px;
+  padding-left: 10px;
+  background-color: #edeaed;
+}
+
+form{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+}
+
+.awesome-submit{
+  padding: 0;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 70px;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: none;
+    border: none;
+    z-index: 40;
+    -webkit-transition: ease-in 4s;
+    transition: ease-in 4s;
+}
+
+
+.awesome-submit .inner{
+  position: relative;
+  height: 70px;
+}
+
+.awesome-submit:active,
+.awesome-submit:focus,
+.awesome-submit:active .inner,
+.awesome-submit:focus .inner{
+  outline: none;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+}
+.awesome-submit .front,
+.awesome-submit .back{
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.awesome-submit .inner,
+.awesome-submit .front,
+.awesome-submit .back,
+.awesome-submit .content{
+  transition: all 1s;
+}
+
+.awesome-submit .front{
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+} 
+
+.awesome-submit .back{
+ background-color: #fff;
+  height: 100px;
+}
+
+.awesome-submit .back .content{
+  display: inline-block;
+}
+.awesome-submit .back i:last-child{
+  margin-left: 6px;
+}
+
+.awesome-submit .front{
+  padding: 0 40px;
+  background-color: #52475b;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+.awesome-submit .front.circle{
+  padding: 0;
+  width: 70px;
+}
+
+@keyframes float-right{
+  from{ transform: translateX(-105px); }
+  to{ transform: translateX(0);}
+}
+.awesome-submit .primary .front .icon-arrow {
+    display: inline-block;
+    animation: float-right .6s ease-out 0s 1 normal;
+}
+
+.awesome-submit .front.circle .content{
+  display: none;
+}
+
+.awesome-submit .front .content{
+  display: inline;
+}
+
+.awesome-submit .back{
+  //width: 100%;
+  height: 100%;
+  background-color: #fff;
+  color: #494151;
+  padding: 0 40px 0 90px;
+  white-space: nowrap;
+}
+
+.awesome-submit .process{
+  
+}
+// process icon 
+
+@keyframes bounching1 {
+  0% {
+    transform: translateY(0px);  
+  }
+
+  25% {
+    transform: translateY(-10px);
+  }
+  
+  50%{
+     transform: translateY(0px);
+  }
+}
+
+@keyframes bounching2 {
+  0% {
+    transform: translateY(0px);  
+  }
+
+  25% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+@keyframes bounching3 {
+  0% {
+    transform: translateY(0px);  
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100%{
+     transform: translateY(0px);
+  }
+}
+
+i:not(.icon-bounce) span{
+  display: none;
+}
+
+.icon-bounce{
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    /* opacity: .8; */
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+}
+
+.icon-bounce span:first-child{
+  
+animation: bounching1 2s linear 0s infinite normal;
+}
+
+.icon-bounce span:nth-child(2){
+
+animation: bounching2 2s linear 0s infinite normal;
+}
+
+.icon-bounce span:last-child{
+
+animation: bounching3 2s linear 0s infinite normal;
+}
+
+.icon-bounce span{
+    width: auto;
+    display: inline-block;
+    padding: 0 2px;
+    margin: 0;
+    font-weight: bold;
+}
+//progress bar
+.awesome-submit .process .back{
+  padding-left: 72px;
+  padding-right: 15px;
+}
+  
+.awesome-submit .process .content{
+  background-color: #fff; 
+}
+.awesome-submit .process .content .progress-bar{
+  position: relative;
+  width: 270px;
+  height: 8px;
+  background-color: #e8e8e9;
+  line-height: 70px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+
+.awesome-submit .process .content .progress-bar .value{
+  content: " ";
+  position: absolute;
+  background-color: #b7e88e;
+  width: 0%;
+  height: 100%;   
+   border-radius: 4px;
+  transition: width .1s;
+}
+
+.awesome-submit .process .back i[class^=icon-]{
+  line-height: 1;
+   overflow: hidden;
+   vertical-align: middle;
+  font-size: 22px;
+  color: #dedbdb;
+  padding: 0 4px;
+  transition: color .1s;
+}
+
+.awesome-submit .process .back i[class^=icon-]:hover{
+color: #71647b;
+}
+
+// error 
+
+.awesome-submit .error .front{
+  background-color: #e0444c;
+}
+
+.awesome-submit .error .front span{
+  display: none;
+}
+
+.awesome-submit .error .back{
+  color: #e0444c; 
+}
+
+.awesome-submit .error .back i:last-child{
+display: none;
+}
+
+//success
+
+.awesome-submit .success .front,{
+display: none;
+}
+
+.awesome-submit .success .back {
+  padding-right: 70px;
+  color: #69c719;
+}
