@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>2016/12/19/lam-the-nao-de-code-javascript-co-the-test-duoc/</loc>
+        <lastmod>2019-10-13T19:29:32.736Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>2019/10/13/ke-hoach-phat-trien-ban-than/</loc>
+        <lastmod>2019-10-13T18:38:15.222Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>2017/03/29/Dependency-Injection-xuong-song-cua-Angular-2-x/</loc>
         <lastmod>2019-10-13T16:00:14.253Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -144,14 +160,6 @@
     </url>
 
     <url>
-        <loc>2016/12/19/lam-the-nao-de-code-javascript-co-the-test-duoc/</loc>
-        <lastmod>2019-10-13T15:55:40.290Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>2016/08/01/khong-ai-la-vo-dung/</loc>
         <lastmod>2019-10-13T15:55:37.386Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -250,14 +258,6 @@
     <url>
         <loc>2016/11/18/Ban-da-thuc-su-hieu-generator-function/</loc>
         <lastmod>2019-10-13T15:54:45.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>2019/10/13/ke-hoach-phat-trien-ban-than/</loc>
-        <lastmod>2019-10-13T15:38:12.412Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

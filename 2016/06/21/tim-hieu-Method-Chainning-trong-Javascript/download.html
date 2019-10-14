@@ -1,6 +1,457 @@
-<!DOCTYPE html><!--[if IE 8]><html class="sp🚧  no-js lt-ie9" lang="en" ><![endif]--><!--[if gt IE 8]><!--><html class="sp🚧 no-js" lang="en"><!--<![endif]--><head><link rel="manifest" href="/manifest.json"><link href="//dab1nmslvvntp.cloudfront.net" ref="dns-prefetch"><link href="//d2sis3lil8ndrq.cloudfront.net" ref="dns-prefetch"><link href="//sitepoint.com" ref="dns-prefetch"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta property="og:image" content="https://www.sitepoint.com/wp-content/themes/sitepoint/assets/images/icon.ruby.png"><link rel="shortcut icon" href="/favicon.ico"><link rel="apple-touch-icon-precomposed" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-57x57-precomposed.png"><link rel="apple-touch-icon-precomposed" sizes="72x72" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-72x72-precomposed.png"><link rel="apple-touch-icon-precomposed" sizes="114x114" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-114x114-precomposed.png"><link rel="apple-touch-icon-precomposed" sizes="144x144" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-144x144-precomposed.png"><link href="https://fonts.googleapis.com/css?family=Roboto:900,900italic,700,700italic,400,400italic,300,300italic" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css"><link rel="alternate" type="application/rss+xml" title="RSS Feed for SitePoint.com" href="https://www.sitepoint.com/feed/"><link href="https://plus.google.com/+sitepoint" rel="publisher"><meta property="twitter:account_id" content="15743570"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="google-site-verification" content="hcQq0cWX73AYby8aMMzNHx8bZrTDI75GWeljGdPmNf8"><meta name="google-site-verification" content="I0jyQlTvZaveab8RtDOjUxSPZXbdSgFrcKdAwaCCfvA"><script>!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-KL8PMMW",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")</script><script class="SP_stripMobile" type="text/javascript">var propertag=propertag||{};propertag.cmd=propertag.cmd||[],function(){var t=document.createElement("script");t.async=!0,t.type="text/javascript";var e="https:"==document.location.protocol;t.src=(e?"https:":"http:")+"//global.proper.io/sitepoint.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}()</script><script class="SP_stripMobile" type="text/javascript">var oSpP,googletag=googletag||{};googletag.cmd=googletag.cmd||[],function(){var t=document.createElement("script");t.async=!0,t.type="text/javascript";var e="https:"==document.location.protocol;t.src=(e?"https:":"http:")+"//www.googletagservices.com/tag/js/gpt.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(t,o)}()</script><script charset="UTF-8" src="//cdn.sendpulse.com/js/push/ee9a890c7a9d2a9236648c25e40bd03e_1.js" async></script><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/www.sitepoint.com\/ruby\/","name":"Ruby"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/www.sitepoint.com\/author\/tjackiw","name":"Thiago Jackiw"}}]}</script><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Article","headline":"A Guide to Method Chaining","url":"https:\/\/www.sitepoint.com\/a-guide-to-method-chaining\/","articleSection":"Ruby","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.sitepoint.com\/a-guide-to-method-chaining\/"},"author":[{"@type":"Person","name":"Thiago Jackiw"}],"publisher":{"@type":"Organization","name":"SitePoint","logo":{"@type":"ImageObject","url":"https:\/\/www.sitepoint.com\/wp-content\/themes\/sitepoint\/assets\/images\/icon.ruby.png"}},"dateCreated":"2013-02-25T14:30:06Z","datePublished":"2013-02-25T14:30:06Z","dateModified":"2013-02-25T14:30:06Z"}</script><title>A Guide to Method Chaining &mdash; SitePoint</title><link rel="canonical" href="https://www.sitepoint.com/a-guide-to-method-chaining/"><link rel="publisher" href="https://plus.google.com/+sitepoint/"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:title" content="A Guide to Method Chaining &mdash; SitePoint"><meta property="og:description" content="Method chaining is a very handy technique for invoking multiple methods at once. Not only does it improve the readability of the code, but it also reduces the amount of code needed when interacting with a class or an instance of a class. You have probably already interacted with method chaining in one way or &hellip;"><meta property="og:url" content="https://www.sitepoint.com/a-guide-to-method-chaining/"><meta property="og:site_name" content="SitePoint"><meta property="article:publisher" content="https://www.facebook.com/sitepoint"><meta property="article:section" content="Ruby"><meta property="article:published_time" content="2013-02-25T14:30:06+00:00"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="Method chaining is a very handy technique for invoking multiple methods at once. Not only does it improve the readability of the code, but it also reduces the amount of code needed when interacting with a class or an instance of a class. You have probably already interacted with method chaining in one way or [&hellip;]"><meta name="twitter:title" content="A Guide to Method Chaining &mdash; SitePoint"><meta name="twitter:site" content="@sitepointdotcom"><meta name="twitter:image" content="http://www.sitepoint.com/wp-content/uploads/2013/02/method_chaining.png"><meta name="twitter:creator" content="@tjackiw"><link rel="dns-prefetch" href="//s.w.org"><link rel="alternate" type="application/rss+xml" title="SitePoint &raquo; A Guide to Method Chaining Comments Feed" href="https://www.sitepoint.com/a-guide-to-method-chaining/feed/"><script type="text/javascript">window._wpemojiSettings={baseUrl:"https://s.w.org/images/core/emoji/11/72x72/",ext:".png",svgUrl:"https://s.w.org/images/core/emoji/11/svg/",svgExt:".svg",source:{concatemoji:"https://www.sitepoint.com/wp-includes/js/wp-emoji-release.min.js?ver=4.9.8"}},function(e,a,t){function r(e,t){var a=String.fromCharCode;g.clearRect(0,0,l.width,l.height),g.fillText(a.apply(this,e),0,0);var r=l.toDataURL();return g.clearRect(0,0,l.width,l.height),g.fillText(a.apply(this,t),0,0),r===l.toDataURL()}function n(e){if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",e){case"flag":return!r([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!r([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!r([55358,56760,9792,65039],[55358,56760,8203,9792,65039])}return!1}function o(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}var i,s,p,c,l=a.createElement("canvas"),g=l.getContext&&l.getContext("2d");for(c=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},p=0;p<c.length;p++)t.supports[c[p]]=n(c[p]),t.supports.everything=t.supports.everything&&t.supports[c[p]],"flag"!==c[p]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[c[p]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(s=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",s,!1),e.addEventListener("load",s,!1)):(e.attachEvent("onload",s),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(i=t.source||{}).concatemoji?o(i.concatemoji):i.wpemoji&&i.twemoji&&(o(i.twemoji),o(i.wpemoji)))}(window,document,window._wpemojiSettings)</script><style type="text/css">img.emoji,img.wp-smiley{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-.1em!important;background:0 0!important;padding:0!important}</style><link rel="stylesheet" id="wp-postratings-css" href="https://www.sitepoint.com/wp-content/plugins/wp-postratings/css/postratings-css.css?ver=1.85" type="text/css" media="all"><link rel="stylesheet" id="sitepoint-styles-css" href="//www.sitepoint.com/wp-content/themes/sitepoint/assets/stylesheets/styles-151a38e87e68fbad6a7c4527ed1a5fba.css?ver=4.9.8" type="text/css" media="all"><link rel="stylesheet" id="sitepoint-dynamic-styles-css" href="//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/bundle-2e0dae5fdc3e93f30cc9361cf4b70597.css?ver=4.9.8" type="text/css" media="all"><link rel="stylesheet" id="sitepoint-styles-article-css" href="//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/article-35a91ee329370f5244ffecd2a6c2e8ca.css?ver=4.9.8" type="text/css" media="all"><script type="text/javascript" src="//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/scripts-head-d486959b95b4547afeeb1b5d8e5cf97f.js?ver=4.9.8"></script><link rel="https://api.w.org/" href="https://www.sitepoint.com/wp-json/"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.sitepoint.com/xmlrpc.php?rsd"><link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.sitepoint.com/wp-includes/wlwmanifest.xml"><meta name="generator" content="WordPress 4.9.8"><link rel="shortlink" href="https://www.sitepoint.com/?p=5347"><link rel="alternate" type="application/json+oembed" href="https://www.sitepoint.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sitepoint.com%2Fa-guide-to-method-chaining%2F"><link rel="alternate" type="text/xml+oembed" href="https://www.sitepoint.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sitepoint.com%2Fa-guide-to-method-chaining%2F&#038;format=xml"><script type="text/javascript">googletag.cmd.push(function(){purchs2s.cmd.push(function(){googletag.pubads().setTargeting("channel","ruby"),googletag.pubads().setTargeting("post_id","5347"),googletag.pubads().setTargeting("AOL",["true","false"]),googletag.pubads().setTargeting("OpenX",["true","false"]),googletag.pubads().setTargeting("Tribal",["true","false"]),googletag.pubads().enableSingleRequest(),googletag.pubads().collapseEmptyDivs(),googletag.pubads().disableInitialLoad(),googletag.enableServices(),purchs2s.setup()})}),SP_GPT_Slots=[]</script><!--[if lt IE 9]>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="sp🚧  no-js lt-ie9" lang="en" ><![endif]-->
+<!--[if gt IE 8]><!--><html class="sp🚧  no-js" lang="en" ><!--<![endif]-->
+  <head>
+    <link rel="manifest" href="/manifest.json">
+    <link href="//dab1nmslvvntp.cloudfront.net" ref="dns-prefetch">
+    <link href="//d2sis3lil8ndrq.cloudfront.net" ref="dns-prefetch">
+    <link href="//sitepoint.com" ref="dns-prefetch">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:image" content="https://www.sitepoint.com/wp-content/themes/sitepoint/assets/images/icon.ruby.png">
+        
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <link rel="apple-touch-icon-precomposed" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-57x57-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/wp-content/themes/sitepoint/assets/images/apple-touch-icon-144x144-precomposed.png" />
+
+    <!-- Sitepoint's new font from Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:900,900italic,700,700italic,400,400italic,300,300italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" >
+
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for SitePoint.com" href="https://www.sitepoint.com/feed/" />
+
+        <link href="https://plus.google.com/+sitepoint" rel="publisher" />
+        <meta property="twitter:account_id" content="15743570" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <meta name="google-site-verification" content="hcQq0cWX73AYby8aMMzNHx8bZrTDI75GWeljGdPmNf8"  />
+<meta name="google-site-verification" content="I0jyQlTvZaveab8RtDOjUxSPZXbdSgFrcKdAwaCCfvA"  />
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KL8PMMW');</script>
+
+    <script class="SP_stripMobile" type="text/javascript">
+      var propertag = propertag || {};
+      propertag.cmd = propertag.cmd || [];
+      (function() {
+      var pm = document.createElement('script');
+      pm.async = true; pm.type = 'text/javascript';
+      var is_ssl = 'https:' == document.location.protocol;
+      pm.src = (is_ssl ? 'https:' : 'http:') + '//global.proper.io/sitepoint.min.js';
+      var node = document.getElementsByTagName('script')[0];
+      node.parentNode.insertBefore(pm, node);
+      })();
+    </script>
+    <script class="SP_stripMobile" type="text/javascript">
+      var googletag = googletag || {};
+      googletag.cmd = googletag.cmd || [];
+      (function() {
+      var gads = document.createElement('script');
+      gads.async = true;
+      gads.type = 'text/javascript';
+      var useSSL = 'https:' == document.location.protocol;
+      gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+      var node = document.getElementsByTagName('script')[0];
+      node.parentNode.insertBefore(gads, node);
+      })();
+
+      var oSpP;
+    </script>
+    <script charset="UTF-8" src="//cdn.sendpulse.com/js/push/ee9a890c7a9d2a9236648c25e40bd03e_1.js" async></script>
+
+
+    <!-- [JSON-LD Schema data[ -->
+        <script type="application/ld+json">
+      {"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/www.sitepoint.com\/ruby\/","name":"Ruby"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/www.sitepoint.com\/author\/tjackiw","name":"Thiago Jackiw"}}]}    </script>
+    <script type="application/ld+json">
+      {"@context":"http:\/\/schema.org","@type":"Article","headline":"A Guide to Method Chaining","url":"https:\/\/www.sitepoint.com\/a-guide-to-method-chaining\/","articleSection":"Ruby","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.sitepoint.com\/a-guide-to-method-chaining\/"},"author":[{"@type":"Person","name":"Thiago Jackiw"}],"publisher":{"@type":"Organization","name":"SitePoint","logo":{"@type":"ImageObject","url":"https:\/\/www.sitepoint.com\/wp-content\/themes\/sitepoint\/assets\/images\/icon.ruby.png"}},"dateCreated":"2013-02-25T14:30:06Z","datePublished":"2013-02-25T14:30:06Z","dateModified":"2013-02-25T14:30:06Z"}    </script>
+    <!-- ]] -->
+
+    
+<!-- This site is optimized with the Yoast SEO plugin v8.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>A Guide to Method Chaining &mdash; SitePoint</title>
+<link rel="canonical" href="https://www.sitepoint.com/a-guide-to-method-chaining/" />
+<link rel="publisher" href="https://plus.google.com/+sitepoint/"/>
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="A Guide to Method Chaining &mdash; SitePoint" />
+<meta property="og:description" content="Method chaining is a very handy technique for invoking multiple methods at once. Not only does it improve the readability of the code, but it also reduces the amount of code needed when interacting with a class or an instance of a class. You have probably already interacted with method chaining in one way or &hellip;" />
+<meta property="og:url" content="https://www.sitepoint.com/a-guide-to-method-chaining/" />
+<meta property="og:site_name" content="SitePoint" />
+<meta property="article:publisher" content="https://www.facebook.com/sitepoint" />
+<meta property="article:section" content="Ruby" />
+<meta property="article:published_time" content="2013-02-25T14:30:06+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Method chaining is a very handy technique for invoking multiple methods at once. Not only does it improve the readability of the code, but it also reduces the amount of code needed when interacting with a class or an instance of a class. You have probably already interacted with method chaining in one way or [&hellip;]" />
+<meta name="twitter:title" content="A Guide to Method Chaining &mdash; SitePoint" />
+<meta name="twitter:site" content="@sitepointdotcom" />
+<meta name="twitter:image" content="http://www.sitepoint.com/wp-content/uploads/2013/02/method_chaining.png" />
+<meta name="twitter:creator" content="@tjackiw" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="SitePoint &raquo; A Guide to Method Chaining Comments Feed" href="https://www.sitepoint.com/a-guide-to-method-chaining/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.sitepoint.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-postratings-css'  href='https://www.sitepoint.com/wp-content/plugins/wp-postratings/css/postratings-css.css?ver=1.85' type='text/css' media='all' />
+<link rel='stylesheet' id='sitepoint-styles-css'  href='//www.sitepoint.com/wp-content/themes/sitepoint/assets/stylesheets/styles-151a38e87e68fbad6a7c4527ed1a5fba.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='sitepoint-dynamic-styles-css'  href='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/bundle-2e0dae5fdc3e93f30cc9361cf4b70597.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='sitepoint-styles-article-css'  href='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/article-35a91ee329370f5244ffecd2a6c2e8ca.css?ver=4.9.8' type='text/css' media='all' />
+<script type='text/javascript' src='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/scripts-head-d486959b95b4547afeeb1b5d8e5cf97f.js?ver=4.9.8'></script>
+<link rel='https://api.w.org/' href='https://www.sitepoint.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.sitepoint.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.sitepoint.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.9.8" />
+<link rel='shortlink' href='https://www.sitepoint.com/?p=5347' />
+<link rel="alternate" type="application/json+oembed" href="https://www.sitepoint.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sitepoint.com%2Fa-guide-to-method-chaining%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.sitepoint.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sitepoint.com%2Fa-guide-to-method-chaining%2F&#038;format=xml" />
+    <script type="text/javascript">
+      googletag.cmd.push(function() {
+        purchs2s.cmd.push(function() {
+          		googletag.pubads().setTargeting("channel", "ruby");
+		googletag.pubads().setTargeting("post_id", "5347");
+		googletag.pubads().setTargeting("AOL",["true", "false"]);
+		googletag.pubads().setTargeting("OpenX",["true", "false"]);
+		googletag.pubads().setTargeting("Tribal",["true", "false"]);
+		googletag.pubads().enableSingleRequest();
+                    googletag.pubads().collapseEmptyDivs();
+          googletag.pubads().disableInitialLoad();
+          googletag.enableServices();
+          purchs2s.setup();
+        });
+      });
+      SP_GPT_Slots = [];
+    </script>
+    <!--[if lt IE 9]>
       <script src="/wp-content/themes/sitepoint/assets/javascripts/vendor/respond.custom.min.js"></script>
-    <![endif]--><style>.t-color{color:#eb5745}a.t-color:hover,button.t-color:hover{color:#b84435}.t-bg{background-color:#eb5745}a.t-bg:hover,button.t-bg:hover{background-color:#b84435}.t-border{border-color:#eb5745}a.t-border:hover,button.t-border:hover{border-color:#b84435}.t-bg-dark{background-color:#b84435}.t-list li:before{background-color:#eb5745}.t-p-pop-bg{background-color:#1a9b9e}a.t-p-pop-bg:hover,button.t-p-pop-bg:hover{background-color:#018285}</style><script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script><script src="https://script.tapfiliate.com/tapfiliate.js" type="text/javascript" async></script><script type="text/javascript">!function(t,a,e){t.TapfiliateObject=a,t[a]=t[a]||function(){(t[a].q=t[a].q||[]).push(arguments)}}(window,"tap"),tap("create","10694-267423"),tap("detect")</script><script src="https://www.google.com/recaptcha/api.js?render=6LfEw7cUAAAAABIV8YABIbOzqBJ3zr4BpjVbDXDK"></script><script>grecaptcha.ready(function(){document.querySelector(".grecaptcha-badge").style.visibility="hidden"})</script></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KL8PMMW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><header class="main-header u-isSingle" role="banner"><nav id="navigation-bar" class="l-d-f l-p-fix l-w-100"><div class="l-d-f l-w-100 l-w-3col--3col l-w-4col--4col l-jc-sb l-mh-auto"><section class="l-d-f l-ai-str l-jc-sta l-gs-ph2 l-gs-ph1--2col"><a class="l-d-f" href="https://www.sitepoint.com/"><div class="l-d-f l-as-cen l-b-n"><svg class="sp-logo" viewBox="0 0 123 27"><g fill-rule="evenodd"><path d="M31.36,16.75 C31.56,17.07 31.82,17.31 32.14,17.50 C32.46,17.68 32.82,17.82 33.23,17.89 C33.63,17.97 34.05,18.01 34.48,18.01 C34.81,18.01 35.16,17.99 35.52,17.94 C35.89,17.89 36.22,17.81 36.53,17.68 C36.83,17.55 37.08,17.36 37.28,17.11 C37.48,16.87 37.58,16.55 37.58,16.17 C37.58,15.64 37.37,15.24 36.96,14.97 C36.55,14.69 36.03,14.47 35.41,14.31 C34.79,14.14 34.12,13.99 33.39,13.85 C32.66,13.71 31.99,13.52 31.37,13.27 C30.75,13.03 30.23,12.68 29.82,12.23 C29.41,11.78 29.20,11.16 29.20,10.36 C29.20,9.73 29.34,9.20 29.63,8.75 C29.92,8.30 30.30,7.94 30.75,7.66 C31.20,7.38 31.72,7.17 32.29,7.03 C32.86,6.90 33.42,6.83 33.99,6.83 C34.71,6.83 35.38,6.89 35.99,7.01 C36.61,7.13 37.15,7.34 37.62,7.63 C38.09,7.93 38.46,8.33 38.75,8.83 C39.03,9.34 39.19,9.96 39.24,10.72 L37.13,10.72 C37.10,10.32 36.99,9.98 36.81,9.72 C36.63,9.46 36.40,9.25 36.12,9.08 C35.84,8.92 35.53,8.81 35.19,8.74 C34.85,8.66 34.51,8.63 34.16,8.63 C33.84,8.63 33.53,8.65 33.20,8.70 C32.88,8.75 32.59,8.83 32.32,8.95 C32.06,9.07 31.84,9.23 31.68,9.43 C31.51,9.63 31.43,9.89 31.43,10.21 C31.43,10.56 31.56,10.86 31.82,11.09 C32.07,11.32 32.40,11.51 32.80,11.66 C33.19,11.82 33.64,11.95 34.13,12.05 C34.63,12.15 35.13,12.26 35.62,12.37 C36.15,12.49 36.67,12.62 37.17,12.78 C37.67,12.94 38.12,13.15 38.51,13.42 C38.90,13.68 39.21,14.01 39.45,14.41 C39.69,14.81 39.81,15.31 39.81,15.90 C39.81,16.66 39.65,17.28 39.33,17.77 C39.01,18.27 38.58,18.67 38.06,18.98 C37.54,19.28 36.96,19.49 36.30,19.61 C35.65,19.73 35.00,19.79 34.36,19.79 C33.65,19.79 32.97,19.72 32.32,19.58 C31.68,19.43 31.11,19.20 30.61,18.87 C30.12,18.54 29.72,18.11 29.42,17.57 C29.13,17.03 28.96,16.38 28.93,15.61 L31.03,15.61 C31.05,16.06 31.16,16.44 31.36,16.75" id="Fill-1"></path><path d="M42.27,7.12 L44.37,7.12 L44.37,19.53 L42.27,19.53 L42.27,7.12 Z" id="Fill-2"></path><path d="M53.13,7.12 L53.13,8.92 L50.57,8.92 L50.57,16.62 C50.57,16.86 50.59,17.05 50.63,17.20 C50.67,17.34 50.75,17.46 50.87,17.54 C50.99,17.62 51.15,17.67 51.35,17.69 C51.56,17.71 51.83,17.73 52.16,17.73 L53.13,17.73 L53.13,19.53 L51.51,19.53 C50.97,19.53 50.50,19.49 50.11,19.42 C49.72,19.35 49.41,19.22 49.17,19.02 C48.93,18.83 48.75,18.56 48.64,18.21 C48.52,17.86 48.46,17.39 48.46,16.81 L48.46,8.92 L46.28,8.92 L46.28,7.12 L48.46,7.12 L48.46,3.39 L50.57,3.39 L50.57,7.12 L53.13,7.12" id="Fill-3"></path><path d="M64.53,18.73 C63.57,19.44 62.36,19.79 60.91,19.79 C59.89,19.79 59.00,19.63 58.25,19.31 C57.49,18.99 56.86,18.54 56.35,17.97 C55.84,17.39 55.45,16.70 55.20,15.90 C54.94,15.10 54.80,14.23 54.76,13.29 C54.76,12.34 54.91,11.48 55.21,10.69 C55.51,9.91 55.92,9.23 56.46,8.65 C57.00,8.08 57.63,7.63 58.37,7.31 C59.11,6.99 59.91,6.83 60.79,6.83 C61.93,6.83 62.87,7.05 63.63,7.51 C64.38,7.97 64.98,8.55 65.44,9.25 C65.89,9.96 66.20,10.73 66.38,11.56 C66.55,12.39 66.62,13.18 66.59,13.93 L56.99,13.93 C56.98,14.48 57.04,14.99 57.19,15.48 C57.34,15.97 57.58,16.40 57.91,16.78 C58.24,17.16 58.66,17.46 59.18,17.68 C59.69,17.90 60.29,18.01 60.98,18.01 C61.88,18.01 62.61,17.82 63.18,17.41 C63.75,17.02 64.13,16.41 64.31,15.59 L66.39,15.59 C66.11,16.98 65.49,18.03 64.53,18.73 L64.53,18.73 Z M64.02,10.76 C63.83,10.33 63.58,9.96 63.25,9.65 C62.93,9.34 62.55,9.09 62.11,8.90 C61.68,8.72 61.19,8.63 60.66,8.63 C60.12,8.63 59.62,8.72 59.19,8.90 C58.75,9.09 58.37,9.34 58.06,9.66 C57.75,9.98 57.50,10.35 57.32,10.78 C57.13,11.20 57.03,11.65 56.99,12.13 L64.36,12.13 C64.32,11.65 64.21,11.20 64.02,10.76 L64.02,10.76 Z" id="Fill-4"></path><path d="M70.95,7.12 L70.95,8.80 L71.00,8.80 C71.35,8.11 71.89,7.61 72.64,7.30 C73.38,6.98 74.20,6.83 75.09,6.83 C76.09,6.83 76.95,7.00 77.68,7.36 C78.42,7.71 79.03,8.18 79.52,8.78 C80.01,9.38 80.37,10.08 80.62,10.86 C80.87,11.65 80.99,12.48 80.99,13.36 C80.99,14.24 80.87,15.07 80.63,15.85 C80.39,16.64 80.03,17.32 79.54,17.91 C79.06,18.49 78.44,18.95 77.71,19.29 C76.97,19.62 76.12,19.79 75.14,19.79 C74.83,19.79 74.48,19.76 74.09,19.70 C73.70,19.63 73.32,19.53 72.94,19.38 C72.56,19.24 72.20,19.04 71.86,18.79 C71.52,18.55 71.23,18.24 71.00,17.87 L70.95,17.87 L70.95,24.26 L68.84,24.26 L68.84,7.12 L70.95,7.12 L70.95,7.12 Z M78.53,11.52 C78.37,10.97 78.13,10.48 77.81,10.04 C77.49,9.61 77.07,9.27 76.57,9.01 C76.06,8.76 75.47,8.63 74.79,8.63 C74.08,8.63 73.48,8.76 72.98,9.04 C72.49,9.31 72.08,9.67 71.77,10.10 C71.46,10.55 71.23,11.05 71.09,11.60 C70.95,12.17 70.88,12.73 70.88,13.31 C70.88,13.92 70.95,14.51 71.10,15.07 C71.25,15.64 71.48,16.14 71.81,16.57 C72.13,17.01 72.55,17.35 73.06,17.62 C73.57,17.88 74.19,18.01 74.92,18.01 C75.65,18.01 76.25,17.88 76.74,17.61 C77.23,17.34 77.62,16.98 77.92,16.53 C78.22,16.08 78.43,15.57 78.56,14.99 C78.70,14.41 78.76,13.82 78.76,13.21 C78.76,12.64 78.68,12.07 78.53,11.52 L78.53,11.52 Z" id="Fill-5"></path><path d="M83.17,10.78 C83.44,9.98 83.84,9.30 84.36,8.71 C84.89,8.13 85.55,7.67 86.33,7.33 C87.10,7.00 87.99,6.83 89.00,6.83 C90.03,6.83 90.92,7.00 91.69,7.33 C92.46,7.67 93.11,8.13 93.64,8.71 C94.17,9.30 94.56,9.98 94.83,10.78 C95.09,11.57 95.23,12.42 95.23,13.33 C95.23,14.25 95.09,15.09 94.83,15.88 C94.56,16.66 94.17,17.35 93.64,17.93 C93.11,18.52 92.46,18.97 91.69,19.30 C90.92,19.63 90.03,19.79 89.00,19.79 C87.99,19.79 87.10,19.63 86.33,19.30 C85.55,18.97 84.89,18.52 84.36,17.93 C83.84,17.35 83.44,16.66 83.17,15.88 C82.91,15.09 82.78,14.25 82.78,13.33 C82.78,12.42 82.91,11.57 83.17,10.78 L83.17,10.78 Z M85.32,15.34 C85.53,15.92 85.81,16.41 86.18,16.80 C86.54,17.19 86.96,17.49 87.45,17.70 C87.94,17.91 88.46,18.01 89.00,18.01 C89.55,18.01 90.06,17.91 90.55,17.70 C91.04,17.49 91.46,17.19 91.83,16.80 C92.19,16.41 92.48,15.92 92.68,15.34 C92.89,14.75 92.99,14.09 92.99,13.33 C92.99,12.58 92.89,11.91 92.68,11.33 C92.48,10.75 92.19,10.25 91.83,9.85 C91.46,9.45 91.04,9.15 90.55,8.94 C90.06,8.73 89.55,8.63 89.00,8.63 C88.46,8.63 87.94,8.73 87.45,8.94 C86.96,9.15 86.54,9.45 86.18,9.85 C85.81,10.25 85.53,10.75 85.32,11.33 C85.11,11.91 85.01,12.58 85.01,13.33 C85.01,14.09 85.11,14.75 85.32,15.34 L85.32,15.34 Z" id="Fill-6"></path><path d="M97.83,7.12 L99.94,7.12 L99.94,19.53 L97.83,19.53 L97.83,7.12 Z" id="Fill-7"></path><path d="M105.19,7.12 L105.19,9.08 L105.24,9.08 C106.12,7.58 107.51,6.83 109.41,6.83 C110.25,6.83 110.95,6.94 111.51,7.16 C112.08,7.39 112.53,7.70 112.88,8.10 C113.23,8.50 113.47,8.98 113.61,9.53 C113.75,10.08 113.82,10.69 113.82,11.36 L113.82,19.53 L111.71,19.53 L111.71,11.12 C111.71,10.36 111.48,9.75 111.02,9.30 C110.56,8.85 109.92,8.63 109.11,8.63 C108.46,8.63 107.91,8.72 107.43,8.92 C106.96,9.11 106.57,9.38 106.26,9.73 C105.94,10.08 105.71,10.50 105.55,10.97 C105.39,11.44 105.32,11.96 105.32,12.52 L105.32,19.53 L103.21,19.53 L103.21,7.12 L105.19,7.12" id="Fill-8"></path><path d="M122.47,7.12 L122.47,8.92 L119.92,8.92 L119.92,16.62 C119.92,16.86 119.94,17.05 119.98,17.20 C120.02,17.34 120.10,17.46 120.22,17.54 C120.33,17.62 120.49,17.67 120.70,17.69 C120.91,17.71 121.18,17.73 121.50,17.73 L122.47,17.73 L122.47,19.53 L120.86,19.53 C120.32,19.53 119.85,19.49 119.46,19.42 C119.07,19.35 118.76,19.22 118.52,19.02 C118.28,18.83 118.10,18.56 117.99,18.21 C117.87,17.86 117.81,17.39 117.81,16.81 L117.81,8.92 L115.63,8.92 L115.63,7.12 L117.81,7.12 L117.81,3.39 L119.92,3.39 L119.92,7.12 L122.47,7.12" id="Fill-9"></path><path d="M0.67,11.87 L2.62,13.76 L8.76,19.50 L11.41,16.94 C11.65,16.61 11.64,16.16 11.36,15.84 L8.94,13.72 L8.95,13.72 L6.34,11.19 C6.04,10.84 6.04,10.32 6.37,9.99 L13.38,3.21 L10.20,0.12 L0.68,9.31 C-0.05,10.02 -0.05,11.17 0.67,11.87" id="Fill-10"></path><path d="M21.60,15.15 L19.66,13.27 L13.51,7.53 L10.86,10.08 C10.62,10.42 10.64,10.87 10.91,11.19 L13.33,13.31 L13.33,13.31 L15.93,15.84 C16.24,16.19 16.23,16.70 15.91,17.04 L8.89,23.82 L12.08,26.91 L19.65,19.60 L21.60,17.71 C22.33,17.01 22.33,15.86 21.60,15.15" id="Fill-11"></path><path d="M44.55,4.58 C44.55,5.24 44.00,5.77 43.32,5.77 C42.64,5.77 42.09,5.24 42.09,4.58 C42.09,3.93 42.64,3.39 43.32,3.39 C44.00,3.39 44.55,3.93 44.55,4.58" id="Fill-12"></path><path d="M100.11,4.58 C100.11,5.24 99.56,5.77 98.88,5.77 C98.20,5.77 97.65,5.24 97.65,4.58 C97.65,3.93 98.20,3.39 98.88,3.39 C99.56,3.39 100.11,3.93 100.11,4.58" id="Fill-13"></path></g></svg></div></a></section><section id="hamburger-container" class="l-ai-cen l-d-f l-gs-ph1"><div class="hamburger"><div class="hamburger-box"><div class="hamburger-inner"></div></div></div></section><section id="nav-container" class="l-ai-cen"><ul id="nav" class="l-d-f l-w-100 l-ma0 l-fd-col"><li class="l-gs-ph2 l-gs-ph1--2col t-ls-n"><a id="nav-blog" href="/blog" data-text="Blog">Blog</a></li><li class="l-gs-ph2 l-gs-ph1--2col t-ls-n"><a href="/community" data-text="Community">Community</a></li><li class="l-gs-ph2 l-gs-ph1--2col t-ls-n"><a href="/premium/library/" data-text="Library">Library</a></li><nav-bar-actions is_member="" slug="a-guide-to-method-chaining" categories="ruby"></nav-bar-actions></ul></section></div></nav><div class="NavBar_offsetSpacer"></div><script>var current_category=["ruby"];if(null!==localStorage.getItem("SP_categories")){if(!1===localStorage.getItem("SP_categories").includes(current_category)){var sp_categories=JSON.parse(localStorage.getItem("SP_categories")||"[]"),temp=current_category.concat(sp_categories),filtered_categories=Array.from(new Set(temp));localStorage.setItem("SP_categories",JSON.stringify(filtered_categories))}}else localStorage.setItem("SP_categories",JSON.stringify("ruby"));localStorage.setItem("SP_slug","a-guide-to-method-chaining");var toggleMobileNav=function(e){e.target.className.includes("hamburger")&&document.getElementById("hamburger-container").classList.toggle("open")},isTouchSupported="ontouchstart"in window,startEvent=isTouchSupported?"touchstart":"click";document.addEventListener(startEvent,toggleMobileNav);var current_url=window.location.href;-1<current_url.indexOf("/blog")&&document.getElementById("nav-blog").classList.add("youarehere")</script><div class="widget maestro maestro-content-type-html hide-for-tablet-SP hide-for-mobile-SP" id="maestro-744"><script>document.addEventListener("DOMContentLoaded",function(t){new function(){var s=this,t=0<arguments.length&&void 0!==arguments[0]?arguments[0]:{};function e(t){document.body.style.marginTop=t.getBoundingClientRect().height+"px"}this.init=function(){var t,e,n,o=window.localStorage.getItem("sp-smartbar-closed");(!o||(t=o,e=new Date(Date.parse(t)).getTime(),n=(new Date).getTime(),e<n))&&(this.config.countdown.show&&this.setTime(),this.config.countdown.show&&this.buildCountdown(),this.config.content.show&&this.buildText(),this.config.button.show&&this.buildButton(),this.buildCloseButton(),this.render())},this.defaults={content:{show:!0,text:"Get 170+ Web Dev Books - FREE for 7 days"},countdown:{show:!0,offset:23},button:{show:!0,text:"Start Free Trial",href:"https://www.sitepoint.com/premium/sign-up"},container:{timeout:0}},this.config=function(i){for(var t=1;t<arguments.length;t++){var s=null!=arguments[t]?arguments[t]:{},e=Object.keys(s);"function"==typeof Object.getOwnPropertySymbols&&(e=e.concat(Object.getOwnPropertySymbols(s).filter(function(t){return Object.getOwnPropertyDescriptor(s,t).enumerable}))),e.forEach(function(t){var e,n,o;e=i,o=s[n=t],n in e?Object.defineProperty(e,n,{value:o,enumerable:!0,configurable:!0,writable:!0}):e[n]=o})}return i}({},this.defaults,t),this.container=document.createElement("div"),this.body=document.createElement("div"),this.children={text:document.createElement("div"),countdown:document.createElement("div"),button:document.createElement("div")},this.buildText=function(){s.children.text.innerHTML="<span>".concat(s.config.content.text,"</span>")},this.setTime=function(){var t=window.localStorage.getItem("sp-countdown"),e=s.config.countdown.offset;if(e=(e=24<e?24:e)<=0?1:e,t)s.endtime=new Date(t);else{var n=new Date(Date.parse(new Date)+60*e*60*1e3);s.endtime=n,window.localStorage.setItem("sp-countdown",n)}},this.clearTime=function(){window.localStorage.removeItem("sp-countdown")},this.getRemainingTime=function(){var t=s.endtime-Date.parse(new Date),e=Math.floor(t/1e3%60),n=Math.floor(t/1e3/60%60),o=Math.floor(t/36e5%24);return(t<=0||isNaN(t))&&s.setTime(),{total:t,hours:o,minutes:n,seconds:e}},this.buildCountdown=function(){var t=s.getRemainingTime(),e=t.total,n=t.hours,o=t.minutes,i=t.seconds;e<=0&&(s.clearTime(),s.setTime()),isNaN(e)||(s.children.countdown.innerHTML='<span class="hours">'.concat(("0"+n).slice(-2),'</span>:<span class="minutes">').concat(("0"+o).slice(-2),'</span>:<span class="seconds">').concat(("0"+i).slice(-2),"</span>"))},this.buildButton=function(){s.children.button.innerHTML='<a href="'.concat(s.config.button.href,'">').concat(s.config.button.text,"</a>")},this.buildCloseButton=function(){s.closeButton=document.createElement("button"),s.closeButton.setAttribute("title","close"),s.closeButton.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 22.6 22.6" style="height: 1em; width: 1em; xml:space="preserve" preserveAspectRatio="none">\n<rect fill="currentColor" x="8.3" y="-1.7" transform="matrix(0.7071 0.7071 -0.7071 0.7071 11.3137 -4.6863)" width="6" height="26"></rect>\n<rect fill="currentColor" x="8.3" y="-1.7" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 27.3137 11.3137)" width="6" height="26"></rect>\n</svg>'},this.hide=function(t){t.preventDefault();var e=window.getComputedStyle(document.body).marginTop,n=parseInt(e.split("px")[0]),o=s.container.getBoundingClientRect().height,i=new Date;i.setDate(i.getDate()+2),document.body.style.marginTop=o-n+"px",window.localStorage.setItem("sp-smartbar-closed",i),s.container.style.display="none"},this.render=function(){s.body.innerHTML="",s.container.setAttribute("class","sp-smartbar"),s.body.setAttribute("class","sp-smartbar__body"),s.children.text.setAttribute("class","sp-smartbar__text"),s.children.countdown.setAttribute("class","sp-smartbar__countdown"),s.children.button.setAttribute("class","sp-smartbar__button"),s.closeButton.setAttribute("class","sp-smartbar__close"),s.body.appendChild(s.closeButton),s.config.content.show&&s.body.appendChild(s.children.text),s.config.countdown.show&&(s.body.appendChild(s.children.countdown),setInterval(s.buildCountdown,1e3)),s.config.button.show&&s.body.appendChild(s.children.button),s.container.appendChild(s.body),document.body.appendChild(s.container),e(s.container),s.closeButton.addEventListener("click",s.hide),window.addEventListener("resize",function(){return e(s.container)})},this.init()}({content:{show:!0,text:"Unlimited access to hundreds of tech books and videos for $6!"},countdown:{show:!0,offset:12},button:{show:!0,text:"GET ACCESS NOW!",href:"https://www.sitepoint.com/premium/products/Z2lkOi8vbGVhcm5hYmxlL1Byb2R1Y3QvMzA3?utm_source=smartbar&utm_medium=article&utm_campaign=$6"},container:{timeout:0}})})</script><style>.sp-smartbar{all:initial;-webkit-box-sizing:border-box;box-sizing:border-box;position:fixed;top:0;width:100%;font-size:18px;font-family:Roboto,"Helvetica Neue",Helvetica,Helvetica,Arial,sans-serif}.sp-smartbar__body{display:-webkit-box;display:-ms-flexbox;display:flex;min-height:0;padding:.5em 1.5em;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap;background-color:#6836a2;color:#fff}.sp-smartbar__body>*{margin:.25em .5em}.sp-smartbar__close{all:initial;padding:.25em;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;cursor:pointer;position:absolute;top:50%;right:1em;-webkit-transform:translateY(-50%);transform:translateY(-50%);background:0 0;border:0;color:#9b9b9b;font-size:20px}.sp-smartbar__close rect{fill:currentcolor;stroke:currentcolor}.sp-smartbar__text{text-align:center;font-size:26px;font-weight:800;letter-spacing:.02em}.sp-smartbar__countdown{display:-webkit-box;display:-ms-flexbox;display:flex;font-size:1.5em;font-weight:800;color:#fd6767}.sp-smartbar__button a{display:inline-block;text-decoration:none;color:#fff;background:#3ec9cb;padding:.5em 1.5em;border-radius:3px;font-weight:500}@media only screen and (max-width:936px){.sp-smartbar{display:none;visibility:hidden}}</style></div></header><div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-776"><div class="proper-ad-unit"><div id="proper-ad-sitepoint_billboard"><script>propertag.cmd.push(function(){proper_display("sitepoint_billboard")})</script></div></div></div><div class="l-p-rel t-bg-white sp-article" role="main"><div class="l-p-rel l-w-100 l-mh-auto Article_overflow"><div class="l-w-100 t-bg"><div class="l-w-4col--4col l-mh3 l-ph4--2col l-mh-auto--3col"><div class="f-medium f-c-grey-200 l-pt3"><ol class="Article_breadcrumb l-ml0 f-minor l-mb0"><li class="breadcrumb__item f-capitalize l-d-ib t-ls-n"><a class="f-c-white f-bold" href="https://www.sitepoint.com/ruby/">ruby</a></li><li class="breadcrumb__item f-c-grey-200 l-d-ib t-ls-n">February 25, 2013</li><li class="breadcrumb__item l-d-ib t-ls-n" class="breadcrumb_author f-c-white">By <a class="f-c-grey-200" href="https://www.sitepoint.com/author/tjackiw/">Thiago Jackiw</a></li></ol></div><div class="l-d-f l-fd-col l-fd-row--3col l-jc-sb"><div><h1 class="l-mt0 f-bold f-icon-bold l-mb4 f-c-white"><span class="f-c-white l-mr3">A Guide to Method Chaining</span></h1></div></div></div></div><div class="l-d-f l-jc-sb l-mt3 l-w-4col--4col l-mh-auto" data-hellobar="content"><div class="l-w-100 l-fg1 l-mh3--2col l-mh0--4col l-o-h"><div class="l-pa3 l-pt0"><div class="l-d-f l-jc-cen f-center l-mh-auto l-o-h l-mt3"></div><div class="ArticleCopy language-"><sp-social-share></sp-social-share><div class="l-mt3 l-mh5--2col"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd"><html><body><p><img class="alignleft size-full wp-image-5348" alt="method_chaining" src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/02/method_chaining.png" width="262" height="273"></p><p>Method chaining is a very handy technique for invoking multiple methods at once. Not only does it improve the readability of the code, but it also reduces the amount of code needed when interacting with a class or an instance of a class.</p><p>You have probably already interacted with method chaining in one way or another, especially if you have used ActiveRecord. Remember doing something like this <code>Model.where(&hellip;).order(&hellip;)</code>? Yep, that is method chaining. In this article you will learn how to apply the same features to your own code.</p><p>This article will be divided into two simple parts:</p><ul><li>Introduction to method chaining</li><li>Method chaining at the class level</li></ul><p>The first part will cover the basics of method chaining, with step-by-step examples; and the second part will explain how to do method chaining at the class level, be it via explicit method declaration of class methods or by using and extending an additional module.</p><p>Are you ready to embark into this awesome journey? Let&rsquo;s go!</p><h2>Introduction to Method Chaining</h2><p>For the introductory part we are going to be designing a class that will contain a few methods that can be eventually chained together, and one method that outputs a message. Let us start with our basic class structure:</p><pre><code class="language-ruby">class Person
+    <![endif]-->
+    <style>
+  .t-color { color: #EB5745 }
+  a.t-color:hover,
+  button.t-color:hover { color: #B84435 }
+
+  .t-bg { background-color: #EB5745 }
+  a.t-bg:hover,
+  button.t-bg:hover { background-color: #B84435}
+
+  .t-border { border-color: #EB5745 }
+  a.t-border:hover,
+  button.t-border:hover { border-color: #B84435 }
+
+  .t-bg-dark { background-color: #B84435 }
+
+  .t-list li:before { background-color: #EB5745; }
+
+  .t-p-pop-bg { background-color: #1a9b9e }
+  a.t-p-pop-bg:hover,
+  button.t-p-pop-bg:hover { background-color: #018285}
+</style>
+
+    <!-- Nativo Ads -->
+    <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
+     <!-- Tapfiliate code here-->
+    <script src="https://script.tapfiliate.com/tapfiliate.js" type="text/javascript" async></script>
+    <script type="text/javascript">
+      (function(t,a,p){t.TapfiliateObject=a;t[a]=t[a]||function(){
+      (t[a].q=t[a].q||[]).push(arguments)}})(window,'tap');
+
+      tap('create', '10694-267423');
+      tap('detect');
+    </script>
+
+    <!-- reCAPTCHA v3 code here-->
+          <script src="https://www.google.com/recaptcha/api.js?render=6LfEw7cUAAAAABIV8YABIbOzqBJ3zr4BpjVbDXDK"></script>
+      <script>
+        grecaptcha.ready(function(){
+          document.querySelector('.grecaptcha-badge').style.visibility = 'hidden';
+        });
+      </script>
+      </head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KL8PMMW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+    <header class="main-header u-isSingle" role="banner">
+    <nav id="navigation-bar" class="l-d-f l-p-fix l-w-100">
+      <div class="l-d-f l-w-100 l-w-3col--3col l-w-4col--4col l-jc-sb l-mh-auto">
+        <section class="l-d-f l-ai-str l-jc-sta l-gs-ph2 l-gs-ph1--2col">
+          <a class="l-d-f" href="https://www.sitepoint.com/">
+            <div class="l-d-f l-as-cen l-b-n">
+              <svg class="sp-logo" viewBox="0 0 123 27">
+  <g fill-rule="evenodd">
+    <path d="M31.36,16.75 C31.56,17.07 31.82,17.31 32.14,17.50 C32.46,17.68 32.82,17.82 33.23,17.89 C33.63,17.97 34.05,18.01 34.48,18.01 C34.81,18.01 35.16,17.99 35.52,17.94 C35.89,17.89 36.22,17.81 36.53,17.68 C36.83,17.55 37.08,17.36 37.28,17.11 C37.48,16.87 37.58,16.55 37.58,16.17 C37.58,15.64 37.37,15.24 36.96,14.97 C36.55,14.69 36.03,14.47 35.41,14.31 C34.79,14.14 34.12,13.99 33.39,13.85 C32.66,13.71 31.99,13.52 31.37,13.27 C30.75,13.03 30.23,12.68 29.82,12.23 C29.41,11.78 29.20,11.16 29.20,10.36 C29.20,9.73 29.34,9.20 29.63,8.75 C29.92,8.30 30.30,7.94 30.75,7.66 C31.20,7.38 31.72,7.17 32.29,7.03 C32.86,6.90 33.42,6.83 33.99,6.83 C34.71,6.83 35.38,6.89 35.99,7.01 C36.61,7.13 37.15,7.34 37.62,7.63 C38.09,7.93 38.46,8.33 38.75,8.83 C39.03,9.34 39.19,9.96 39.24,10.72 L37.13,10.72 C37.10,10.32 36.99,9.98 36.81,9.72 C36.63,9.46 36.40,9.25 36.12,9.08 C35.84,8.92 35.53,8.81 35.19,8.74 C34.85,8.66 34.51,8.63 34.16,8.63 C33.84,8.63 33.53,8.65 33.20,8.70 C32.88,8.75 32.59,8.83 32.32,8.95 C32.06,9.07 31.84,9.23 31.68,9.43 C31.51,9.63 31.43,9.89 31.43,10.21 C31.43,10.56 31.56,10.86 31.82,11.09 C32.07,11.32 32.40,11.51 32.80,11.66 C33.19,11.82 33.64,11.95 34.13,12.05 C34.63,12.15 35.13,12.26 35.62,12.37 C36.15,12.49 36.67,12.62 37.17,12.78 C37.67,12.94 38.12,13.15 38.51,13.42 C38.90,13.68 39.21,14.01 39.45,14.41 C39.69,14.81 39.81,15.31 39.81,15.90 C39.81,16.66 39.65,17.28 39.33,17.77 C39.01,18.27 38.58,18.67 38.06,18.98 C37.54,19.28 36.96,19.49 36.30,19.61 C35.65,19.73 35.00,19.79 34.36,19.79 C33.65,19.79 32.97,19.72 32.32,19.58 C31.68,19.43 31.11,19.20 30.61,18.87 C30.12,18.54 29.72,18.11 29.42,17.57 C29.13,17.03 28.96,16.38 28.93,15.61 L31.03,15.61 C31.05,16.06 31.16,16.44 31.36,16.75" id="Fill-1"></path>
+    <path d="M42.27,7.12 L44.37,7.12 L44.37,19.53 L42.27,19.53 L42.27,7.12 Z" id="Fill-2"></path>
+    <path d="M53.13,7.12 L53.13,8.92 L50.57,8.92 L50.57,16.62 C50.57,16.86 50.59,17.05 50.63,17.20 C50.67,17.34 50.75,17.46 50.87,17.54 C50.99,17.62 51.15,17.67 51.35,17.69 C51.56,17.71 51.83,17.73 52.16,17.73 L53.13,17.73 L53.13,19.53 L51.51,19.53 C50.97,19.53 50.50,19.49 50.11,19.42 C49.72,19.35 49.41,19.22 49.17,19.02 C48.93,18.83 48.75,18.56 48.64,18.21 C48.52,17.86 48.46,17.39 48.46,16.81 L48.46,8.92 L46.28,8.92 L46.28,7.12 L48.46,7.12 L48.46,3.39 L50.57,3.39 L50.57,7.12 L53.13,7.12" id="Fill-3"></path>
+    <path d="M64.53,18.73 C63.57,19.44 62.36,19.79 60.91,19.79 C59.89,19.79 59.00,19.63 58.25,19.31 C57.49,18.99 56.86,18.54 56.35,17.97 C55.84,17.39 55.45,16.70 55.20,15.90 C54.94,15.10 54.80,14.23 54.76,13.29 C54.76,12.34 54.91,11.48 55.21,10.69 C55.51,9.91 55.92,9.23 56.46,8.65 C57.00,8.08 57.63,7.63 58.37,7.31 C59.11,6.99 59.91,6.83 60.79,6.83 C61.93,6.83 62.87,7.05 63.63,7.51 C64.38,7.97 64.98,8.55 65.44,9.25 C65.89,9.96 66.20,10.73 66.38,11.56 C66.55,12.39 66.62,13.18 66.59,13.93 L56.99,13.93 C56.98,14.48 57.04,14.99 57.19,15.48 C57.34,15.97 57.58,16.40 57.91,16.78 C58.24,17.16 58.66,17.46 59.18,17.68 C59.69,17.90 60.29,18.01 60.98,18.01 C61.88,18.01 62.61,17.82 63.18,17.41 C63.75,17.02 64.13,16.41 64.31,15.59 L66.39,15.59 C66.11,16.98 65.49,18.03 64.53,18.73 L64.53,18.73 Z M64.02,10.76 C63.83,10.33 63.58,9.96 63.25,9.65 C62.93,9.34 62.55,9.09 62.11,8.90 C61.68,8.72 61.19,8.63 60.66,8.63 C60.12,8.63 59.62,8.72 59.19,8.90 C58.75,9.09 58.37,9.34 58.06,9.66 C57.75,9.98 57.50,10.35 57.32,10.78 C57.13,11.20 57.03,11.65 56.99,12.13 L64.36,12.13 C64.32,11.65 64.21,11.20 64.02,10.76 L64.02,10.76 Z" id="Fill-4"></path>
+    <path d="M70.95,7.12 L70.95,8.80 L71.00,8.80 C71.35,8.11 71.89,7.61 72.64,7.30 C73.38,6.98 74.20,6.83 75.09,6.83 C76.09,6.83 76.95,7.00 77.68,7.36 C78.42,7.71 79.03,8.18 79.52,8.78 C80.01,9.38 80.37,10.08 80.62,10.86 C80.87,11.65 80.99,12.48 80.99,13.36 C80.99,14.24 80.87,15.07 80.63,15.85 C80.39,16.64 80.03,17.32 79.54,17.91 C79.06,18.49 78.44,18.95 77.71,19.29 C76.97,19.62 76.12,19.79 75.14,19.79 C74.83,19.79 74.48,19.76 74.09,19.70 C73.70,19.63 73.32,19.53 72.94,19.38 C72.56,19.24 72.20,19.04 71.86,18.79 C71.52,18.55 71.23,18.24 71.00,17.87 L70.95,17.87 L70.95,24.26 L68.84,24.26 L68.84,7.12 L70.95,7.12 L70.95,7.12 Z M78.53,11.52 C78.37,10.97 78.13,10.48 77.81,10.04 C77.49,9.61 77.07,9.27 76.57,9.01 C76.06,8.76 75.47,8.63 74.79,8.63 C74.08,8.63 73.48,8.76 72.98,9.04 C72.49,9.31 72.08,9.67 71.77,10.10 C71.46,10.55 71.23,11.05 71.09,11.60 C70.95,12.17 70.88,12.73 70.88,13.31 C70.88,13.92 70.95,14.51 71.10,15.07 C71.25,15.64 71.48,16.14 71.81,16.57 C72.13,17.01 72.55,17.35 73.06,17.62 C73.57,17.88 74.19,18.01 74.92,18.01 C75.65,18.01 76.25,17.88 76.74,17.61 C77.23,17.34 77.62,16.98 77.92,16.53 C78.22,16.08 78.43,15.57 78.56,14.99 C78.70,14.41 78.76,13.82 78.76,13.21 C78.76,12.64 78.68,12.07 78.53,11.52 L78.53,11.52 Z" id="Fill-5"></path>
+    <path d="M83.17,10.78 C83.44,9.98 83.84,9.30 84.36,8.71 C84.89,8.13 85.55,7.67 86.33,7.33 C87.10,7.00 87.99,6.83 89.00,6.83 C90.03,6.83 90.92,7.00 91.69,7.33 C92.46,7.67 93.11,8.13 93.64,8.71 C94.17,9.30 94.56,9.98 94.83,10.78 C95.09,11.57 95.23,12.42 95.23,13.33 C95.23,14.25 95.09,15.09 94.83,15.88 C94.56,16.66 94.17,17.35 93.64,17.93 C93.11,18.52 92.46,18.97 91.69,19.30 C90.92,19.63 90.03,19.79 89.00,19.79 C87.99,19.79 87.10,19.63 86.33,19.30 C85.55,18.97 84.89,18.52 84.36,17.93 C83.84,17.35 83.44,16.66 83.17,15.88 C82.91,15.09 82.78,14.25 82.78,13.33 C82.78,12.42 82.91,11.57 83.17,10.78 L83.17,10.78 Z M85.32,15.34 C85.53,15.92 85.81,16.41 86.18,16.80 C86.54,17.19 86.96,17.49 87.45,17.70 C87.94,17.91 88.46,18.01 89.00,18.01 C89.55,18.01 90.06,17.91 90.55,17.70 C91.04,17.49 91.46,17.19 91.83,16.80 C92.19,16.41 92.48,15.92 92.68,15.34 C92.89,14.75 92.99,14.09 92.99,13.33 C92.99,12.58 92.89,11.91 92.68,11.33 C92.48,10.75 92.19,10.25 91.83,9.85 C91.46,9.45 91.04,9.15 90.55,8.94 C90.06,8.73 89.55,8.63 89.00,8.63 C88.46,8.63 87.94,8.73 87.45,8.94 C86.96,9.15 86.54,9.45 86.18,9.85 C85.81,10.25 85.53,10.75 85.32,11.33 C85.11,11.91 85.01,12.58 85.01,13.33 C85.01,14.09 85.11,14.75 85.32,15.34 L85.32,15.34 Z" id="Fill-6"></path>
+    <path d="M97.83,7.12 L99.94,7.12 L99.94,19.53 L97.83,19.53 L97.83,7.12 Z" id="Fill-7"></path>
+    <path d="M105.19,7.12 L105.19,9.08 L105.24,9.08 C106.12,7.58 107.51,6.83 109.41,6.83 C110.25,6.83 110.95,6.94 111.51,7.16 C112.08,7.39 112.53,7.70 112.88,8.10 C113.23,8.50 113.47,8.98 113.61,9.53 C113.75,10.08 113.82,10.69 113.82,11.36 L113.82,19.53 L111.71,19.53 L111.71,11.12 C111.71,10.36 111.48,9.75 111.02,9.30 C110.56,8.85 109.92,8.63 109.11,8.63 C108.46,8.63 107.91,8.72 107.43,8.92 C106.96,9.11 106.57,9.38 106.26,9.73 C105.94,10.08 105.71,10.50 105.55,10.97 C105.39,11.44 105.32,11.96 105.32,12.52 L105.32,19.53 L103.21,19.53 L103.21,7.12 L105.19,7.12" id="Fill-8"></path>
+    <path d="M122.47,7.12 L122.47,8.92 L119.92,8.92 L119.92,16.62 C119.92,16.86 119.94,17.05 119.98,17.20 C120.02,17.34 120.10,17.46 120.22,17.54 C120.33,17.62 120.49,17.67 120.70,17.69 C120.91,17.71 121.18,17.73 121.50,17.73 L122.47,17.73 L122.47,19.53 L120.86,19.53 C120.32,19.53 119.85,19.49 119.46,19.42 C119.07,19.35 118.76,19.22 118.52,19.02 C118.28,18.83 118.10,18.56 117.99,18.21 C117.87,17.86 117.81,17.39 117.81,16.81 L117.81,8.92 L115.63,8.92 L115.63,7.12 L117.81,7.12 L117.81,3.39 L119.92,3.39 L119.92,7.12 L122.47,7.12" id="Fill-9"></path>
+    <path d="M0.67,11.87 L2.62,13.76 L8.76,19.50 L11.41,16.94 C11.65,16.61 11.64,16.16 11.36,15.84 L8.94,13.72 L8.95,13.72 L6.34,11.19 C6.04,10.84 6.04,10.32 6.37,9.99 L13.38,3.21 L10.20,0.12 L0.68,9.31 C-0.05,10.02 -0.05,11.17 0.67,11.87" id="Fill-10"></path>
+    <path d="M21.60,15.15 L19.66,13.27 L13.51,7.53 L10.86,10.08 C10.62,10.42 10.64,10.87 10.91,11.19 L13.33,13.31 L13.33,13.31 L15.93,15.84 C16.24,16.19 16.23,16.70 15.91,17.04 L8.89,23.82 L12.08,26.91 L19.65,19.60 L21.60,17.71 C22.33,17.01 22.33,15.86 21.60,15.15" id="Fill-11"></path>
+    <path d="M44.55,4.58 C44.55,5.24 44.00,5.77 43.32,5.77 C42.64,5.77 42.09,5.24 42.09,4.58 C42.09,3.93 42.64,3.39 43.32,3.39 C44.00,3.39 44.55,3.93 44.55,4.58" id="Fill-12"></path>
+    <path d="M100.11,4.58 C100.11,5.24 99.56,5.77 98.88,5.77 C98.20,5.77 97.65,5.24 97.65,4.58 C97.65,3.93 98.20,3.39 98.88,3.39 C99.56,3.39 100.11,3.93 100.11,4.58" id="Fill-13"></path>
+  </g>
+</svg>
+            </div>
+          </a>
+        </section>
+        <section id="hamburger-container" class="l-ai-cen l-d-f l-gs-ph1">
+          <div class="hamburger">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="nav-container" class="l-ai-cen">
+          <ul id="nav" class="l-d-f l-w-100 l-ma0 l-fd-col">
+            <li class="l-gs-ph2 l-gs-ph1--2col t-ls-n">
+              <a id="nav-blog" href="/blog" data-text="Blog">Blog</a>
+            </li>
+            <li class="l-gs-ph2 l-gs-ph1--2col t-ls-n">
+              <a href="/community" data-text="Community">Community</a>
+            </li>
+            <li class="l-gs-ph2 l-gs-ph1--2col t-ls-n">
+              <a href="/premium/library/" data-text="Library">Library</a>
+            </li>
+                          <nav-bar-actions is_member="" slug="a-guide-to-method-chaining" categories="ruby"></nav-bar-actions>
+                      </ul>
+        </section>
+      </div>
+    </nav>
+
+    <div class="NavBar_offsetSpacer"></div>
+    <script>
+              var current_category = ['ruby'];
+        if (localStorage.getItem('SP_categories') !== null) {
+          if (localStorage.getItem('SP_categories').includes(current_category) === false) {
+            var sp_categories = JSON.parse(localStorage.getItem('SP_categories') || "[]");
+            var temp = current_category.concat(sp_categories);
+            var filtered_categories = Array.from(new Set(temp));
+            localStorage.setItem('SP_categories', JSON.stringify(filtered_categories));
+          }
+        } else {
+          localStorage.setItem('SP_categories', JSON.stringify('ruby'));
+        }
+        // campaign
+        localStorage.setItem('SP_slug', 'a-guide-to-method-chaining');
+
+      
+      /* Toggle mobile navigation */
+      var toggleMobileNav = function(event) {
+        var target = event.target;
+        if (target.className.includes("hamburger")) {
+          document.getElementById("hamburger-container").classList.toggle("open");
+        }
+      }
+      var isTouchSupported = 'ontouchstart' in window;
+      var startEvent = isTouchSupported ? 'touchstart' : 'click';
+      document.addEventListener(startEvent, toggleMobileNav);
+
+      /* Set active navigation item  */
+      var current_url = window.location.href;
+      if (current_url.indexOf("/blog") > -1) {
+        document.getElementById("nav-blog").classList.add("youarehere");
+      }
+    </script>
+    <div class="widget maestro maestro-content-type-html hide-for-tablet-SP hide-for-mobile-SP" id="maestro-744"><script>
+  (function() {
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+	  var spSmartBarConfig = {
+  "content": {
+    "show": true,
+    "text": "Unlimited access to hundreds of tech books and videos for $6!"
+  },
+  "countdown": {
+    "show": true,
+    "offset": 12
+  },
+  "button": {
+    "show": true,
+    "text": "GET ACCESS NOW!",
+    "href": "https://www.sitepoint.com/premium/products/Z2lkOi8vbGVhcm5hYmxlL1Byb2R1Y3QvMzA3?utm_source=smartbar&utm_medium=article&utm_campaign=$6"
+  },
+  "container": {
+    "timeout": 0
+  }
+} /* <-- Set config here */
+
+	  var sb = new SmartBar(spSmartBarConfig);
+      function _objectSpread(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{},o=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(o=o.concat(Object.getOwnPropertySymbols(n).filter(function(t){return Object.getOwnPropertyDescriptor(n,t).enumerable}))),o.forEach(function(e){_defineProperty(t,e,n[e])})}return t}function _defineProperty(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}function SmartBar(){var t=this,e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};function n(t){document.body.style.marginTop=t.getBoundingClientRect().height+"px"}this.init=function(){var t,e,n,o=window.localStorage.getItem("sp-smartbar-closed");(!o||(t=o,e=new Date(Date.parse(t)).getTime(),n=(new Date).getTime(),e<n))&&(this.config.countdown.show&&this.setTime(),this.config.countdown.show&&this.buildCountdown(),this.config.content.show&&this.buildText(),this.config.button.show&&this.buildButton(),this.buildCloseButton(),this.render())},this.defaults={content:{show:!0,text:"Get 170+ Web Dev Books - FREE for 7 days"},countdown:{show:!0,offset:23},button:{show:!0,text:"Start Free Trial",href:"https://www.sitepoint.com/premium/sign-up"},container:{timeout:0}},this.config=_objectSpread({},this.defaults,e),this.container=document.createElement("div"),this.body=document.createElement("div"),this.children={text:document.createElement("div"),countdown:document.createElement("div"),button:document.createElement("div")},this.buildText=function(){t.children.text.innerHTML="<span>".concat(t.config.content.text,"</span>")},this.setTime=function(){var e=window.localStorage.getItem("sp-countdown"),n=t.config.countdown.offset;if(n=(n=n>24?24:n)<=0?1:n,e)t.endtime=new Date(e);else{var o=new Date(Date.parse(new Date)+60*n*60*1e3);t.endtime=o,window.localStorage.setItem("sp-countdown",o)}},this.clearTime=function(){window.localStorage.removeItem("sp-countdown")},this.getRemainingTime=function(){var e=t.endtime-Date.parse(new Date),n=Math.floor(e/1e3%60),o=Math.floor(e/1e3/60%60),i=Math.floor(e/36e5%24);return(e<=0||isNaN(e))&&t.setTime(),{total:e,hours:i,minutes:o,seconds:n}},this.buildCountdown=function(){var e=t.getRemainingTime(),n=e.total,o=e.hours,i=e.minutes,s=e.seconds;n<=0&&(t.clearTime(),t.setTime()),isNaN(n)||(t.children.countdown.innerHTML='<span class="hours">'.concat(("0"+o).slice(-2),'</span>:<span class="minutes">').concat(("0"+i).slice(-2),'</span>:<span class="seconds">').concat(("0"+s).slice(-2),"</span>"))},this.buildButton=function(){t.children.button.innerHTML='<a href="'.concat(t.config.button.href,'">').concat(t.config.button.text,"</a>")},this.buildCloseButton=function(){t.closeButton=document.createElement("button"),t.closeButton.setAttribute("title","close"),t.closeButton.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 22.6 22.6" style="height: 1em; width: 1em; xml:space="preserve" preserveAspectRatio="none">\n<rect fill="currentColor" x="8.3" y="-1.7" transform="matrix(0.7071 0.7071 -0.7071 0.7071 11.3137 -4.6863)" width="6" height="26"></rect>\n<rect fill="currentColor" x="8.3" y="-1.7" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 27.3137 11.3137)" width="6" height="26"></rect>\n</svg>'},this.hide=function(e){e.preventDefault();var n=window.getComputedStyle(document.body).marginTop,o=parseInt(n.split("px")[0]),i=t.container.getBoundingClientRect().height,s=new Date;s.setDate(s.getDate()+2),document.body.style.marginTop=i-o+"px",window.localStorage.setItem("sp-smartbar-closed",s),t.container.style.display="none"},this.render=function(){t.body.innerHTML="",t.container.setAttribute("class","sp-smartbar"),t.body.setAttribute("class","sp-smartbar__body"),t.children.text.setAttribute("class","sp-smartbar__text"),t.children.countdown.setAttribute("class","sp-smartbar__countdown"),t.children.button.setAttribute("class","sp-smartbar__button"),t.closeButton.setAttribute("class","sp-smartbar__close"),t.body.appendChild(t.closeButton),t.config.content.show&&t.body.appendChild(t.children.text),t.config.countdown.show&&(t.body.appendChild(t.children.countdown),setInterval(t.buildCountdown,1e3)),t.config.button.show&&t.body.appendChild(t.children.button),t.container.appendChild(t.body),document.body.appendChild(t.container),n(t.container),t.closeButton.addEventListener("click",t.hide),window.addEventListener("resize",function(){return n(t.container)})},this.init()}
+    });
+  })();
+</script>
+<style>
+  .sp-smartbar {
+    all: initial;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 18px;
+    font-family: "Roboto", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  }
+  .sp-smartbar__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 0px;
+    padding: .5em 1.5em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    background-color:#6836A2;
+    color: #fff;
+  }
+  .sp-smartbar__body > * {
+    margin: 0.25em 0.5em;
+  }
+  .sp-smartbar__close {
+    all: initial;
+    padding: .25em;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    background: transparent;
+    border: 0;
+    color: #9b9b9b;
+    font-size: 20px;
+  }
+  .sp-smartbar__close rect {
+    fill: currentcolor;
+    stroke: currentcolor;
+  }
+  .sp-smartbar__text {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: .02em;
+  }
+  .sp-smartbar__countdown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: #fd6767;
+  }
+  .sp-smartbar__button a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: #3ec9cb;
+    padding: .5em 1.5em;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+@media only screen and (max-width: 936px) {
+  .sp-smartbar {
+    display: none;
+    visibility: hidden;
+  }
+}
+</style></div>  </header><div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-776"><div class="proper-ad-unit">
+    <div id="proper-ad-sitepoint_billboard"> <script> propertag.cmd.push(function() { proper_display('sitepoint_billboard'); }); </script> </div>
+</div></div>  <div class="l-p-rel t-bg-white sp-article" role="main">
+      <div class="l-p-rel l-w-100 l-mh-auto Article_overflow">
+        <div class="l-w-100 t-bg">
+      <div class="l-w-4col--4col l-mh3 l-ph4--2col l-mh-auto--3col">
+        <div class="f-medium f-c-grey-200 l-pt3">
+                    <ol class='Article_breadcrumb l-ml0 f-minor l-mb0'>
+            <li
+              class='breadcrumb__item f-capitalize l-d-ib t-ls-n'
+              >
+              <a
+                class='f-c-white f-bold'
+                href="https://www.sitepoint.com/ruby/">
+                  ruby              </a>
+            </li>
+            <li
+              class='breadcrumb__item f-c-grey-200 l-d-ib t-ls-n'
+            >
+              February 25, 2013            </li>
+            <li
+              class='breadcrumb__item l-d-ib t-ls-n'
+              class='breadcrumb_author f-c-white'>
+                                                By
+                  <a
+                    class='f-c-grey-200'
+                    href="https://www.sitepoint.com/author/tjackiw/">
+                      Thiago Jackiw                  </a>
+                                          </li>
+          </ol>
+        </div>
+        <div class="l-d-f l-fd-col l-fd-row--3col l-jc-sb">
+          <div>
+            <h1 class="l-mt0 f-bold f-icon-bold l-mb4 f-c-white">
+              <span class="f-c-white l-mr3">A Guide to Method Chaining</span>
+            </h1>
+                      </div>
+        </div>
+      </div>
+    </div>
+            <div class="l-d-f l-jc-sb l-mt3 l-w-4col--4col l-mh-auto" data-hellobar="content">
+      <div class="l-w-100 l-fg1 l-mh3--2col l-mh0--4col l-o-h">
+                    <div class="l-pa3 l-pt0">
+    
+      <div class="l-d-f l-jc-cen f-center l-mh-auto l-o-h l-mt3">
+              </div>
+
+        <div class="ArticleCopy language-">
+      <sp-social-share></sp-social-share>
+      <div class='l-mt3 l-mh5--2col'>
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body><p><img class="alignleft size-full wp-image-5348" alt="method_chaining" src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/02/method_chaining.png" width="262" height="273"></p>
+<p>Method chaining is a very handy technique for invoking multiple methods at once. Not only does it improve the readability of the code, but it also reduces the amount of code needed when interacting with a class or an instance of a class.</p>
+<p>You have probably already interacted with method chaining in one way or another, especially if you have used ActiveRecord. Remember doing something like this <code>Model.where(&hellip;).order(&hellip;)</code>? Yep, that is method chaining. In this article you will learn how to apply the same features to your own code.</p>
+<p>This article will be divided into two simple parts:</p>
+<ul><li>Introduction to method chaining</li>
+<li>Method chaining at the class level</li>
+</ul><p>The first part will cover the basics of method chaining, with step-by-step examples; and the second part will explain how to do method chaining at the class level, be it via explicit method declaration of class methods or by using and extending an additional module.</p>
+<p>Are you ready to embark into this awesome journey? Let&rsquo;s go!</p>
+<h2>Introduction to Method Chaining</h2>
+<p>For the introductory part we are going to be designing a class that will contain a few methods that can be eventually chained together, and one method that outputs a message. Let us start with our basic class structure:</p>
+<pre><code class="language-ruby">class Person
 
   def name(value)
   end
@@ -11,7 +462,10 @@
   def introduce
   end
 
-end</code></pre><p>Nothing much here but this will serve as the base for this example. As you can see, it contains three methods: <code>name()</code>, which will take an input value; <code>age()</code>, which also takes an input value; <code>introduce</code>, it will not take an input value. With this basic information at hand, let us implement the next step.</p><p>We are now going to store the input values for <code>name()</code> and <code>age()</code> in instance variables so that we can access them later down the road:</p><pre><code class="language-ruby"># ...
+end</code></pre>
+<p>Nothing much here but this will serve as the base for this example. As you can see, it contains three methods: <code>name()</code>, which will take an input value; <code>age()</code>, which also takes an input value; <code>introduce</code>, it will not take an input value. With this basic information at hand, let us implement the next step.</p>
+<p>We are now going to store the input values for <code>name()</code> and <code>age()</code> in instance variables so that we can access them later down the road:</p>
+<pre><code class="language-ruby"># ...
 def name(value)
   @name = value
 end
@@ -19,12 +473,17 @@ end
 def age(value)
   @age = value
 end
-# ...</code></pre><p>Great, with this addition to our methods, let us try method chaining and see what happens:</p><pre><code class="language-ruby">&gt; person = Person.new
+# ...</code></pre>
+<p>Great, with this addition to our methods, let us try method chaining and see what happens:</p>
+<pre><code class="language-ruby">&gt; person = Person.new
 # =&gt; #&lt;Person:0x007fb18ba29cb8&gt;
 &gt; person.name('Baz')
 # =&gt; "Baz"
 &gt; person.name('Baz').age(21)
-NoMethodError: undefined method `age' for "Baz":String</code></pre><p>As expected, it does not work. The reason being is because the methods are just returning a value &ndash; a string in this case. We need to modify our methods once again, and this time, we are going to be returning something else: <code>self</code>.</p><p>By returning <code>self</code> we are allowing instance methods to be chained together, just like that! Easy huh?! Okay, it is time to modify our methods again:</p><pre><code class="language-ruby"># ...
+NoMethodError: undefined method `age' for "Baz":String</code></pre>
+<p>As expected, it does not work. The reason being is because the methods are just returning a value &ndash; a string in this case. We need to modify our methods once again, and this time, we are going to be returning something else: <code>self</code>.</p>
+<p>By returning <code>self</code> we are allowing instance methods to be chained together, just like that! Easy huh?! Okay, it is time to modify our methods again:</p>
+<pre><code class="language-ruby"># ...
 def name(value)
   @name = value
   self
@@ -34,19 +493,35 @@ def age(value)
   @age = value
   self
 end
-# ...</code></pre><p>Fantastic, what will happen if we try to chain our method calls?</p><pre><code class="language-ruby">&gt; person = Person.new
+# ...</code></pre>
+<p>Fantastic, what will happen if we try to chain our method calls?</p>
+<pre><code class="language-ruby">&gt; person = Person.new
 # =&gt; #&lt;Person:0x007ff202829e38&gt;
 &gt; person.name('Baz')
 # =&gt; #&lt;Person:0x007ff202829e38 @name="Baz"&gt;
 &gt; person.name('Baz').age(21)
-# =&gt; #&lt;Person:0x007ff202829e38 @name="Baz", @age=21&gt;</code></pre><p>It worked! Congratulations, you have just implemented method chaining in Ruby! Now, we need to modify our <code>introduce</code> method and have it do something:</p><div class="proper-ad-unit"><div id="proper-ad-sitepoint_content_1"><script>window.propertag.cmd.push(function(){proper_display("sitepoint_content_1")})</script></div></div><p></p><pre><code class="language-ruby"># ...
+# =&gt; #&lt;Person:0x007ff202829e38 @name="Baz", @age=21&gt;</code></pre>
+<p>It worked! Congratulations, you have just implemented method chaining in Ruby! Now, we need to modify our <code>introduce</code> method and have it do something:<div class="proper-ad-unit">
+          <div id="proper-ad-sitepoint_content_1">
+            <script>
+              window.propertag.cmd.push(function() {
+                proper_display('sitepoint_content_1');
+              });
+            </script></div>
+        </div></p>
+<pre><code class="language-ruby"># ...
 def introduce
   puts "Hello, my name is #{@name}, and I am #{@age} years old."
 end
-# ...</code></pre><p>With all of our code in place, what do you think will happen when we call <code>introduce</code> in our method chain?</p><pre><code class="language-ruby">&gt; person = Person.new
+# ...</code></pre>
+<p>With all of our code in place, what do you think will happen when we call <code>introduce</code> in our method chain?</p>
+<pre><code class="language-ruby">&gt; person = Person.new
 # =&gt; #&lt;Person:0x007fd079085ba0&gt;
 &gt; person.name('Baz').age(21).introduce
-# =&gt; Hello, my name is Baz and I am 21 years old.</code></pre><p>Yep, it worked as expected. Notice that the <code>introduce</code> method needs to be at the end of the chain because it does not return an instance of <code>self</code>.</p><p>Here is the complete code for this example, which I have also contributed to Wikipedia under the <a href="http://en.wikipedia.org/wiki/Method_chaining">Method chaining article</a>:</p><pre><code class="language-ruby">class Person
+# =&gt; Hello, my name is Baz and I am 21 years old.</code></pre>
+<p>Yep, it worked as expected. Notice that the <code>introduce</code> method needs to be at the end of the chain because it does not return an instance of <code>self</code>.</p>
+<p>Here is the complete code for this example, which I have also contributed to Wikipedia under the <a href="http://en.wikipedia.org/wiki/Method_chaining">Method chaining article</a>:</p>
+<pre><code class="language-ruby">class Person
 
   def name(value)
     @name = value
@@ -62,7 +537,12 @@ end
     puts "Hello, my name is #{@name} and I am #{@age} years old."
   end
 
-end</code></pre><p>As an exercise for the reader, I encourage you to modify the <code>introduce</code> method and make it output the text based on the data available. For example, if only <code>@name</code> is available, you would print the sentence without the age part. If only <code>@age</code> is available, you would print the sentence without the name part.</p><h2>Method Chaining at the Class Level</h2><p>We have just learned how to chain our method calls when invoking methods on an instance of a class. But what about chaining the methods at the class level, similar to <code>Model.where(&hellip;).order(&hellip;)</code>? It is pretty much the same process, except that our method declaration will be at the class level instead of the instance level.</p><p>Let us go ahead and do just that, let us design a class that contains class methods that can be chained together. The basic structure for this example will be something like this:</p><pre><code class="language-ruby">class Speaker
+end</code></pre>
+<p>As an exercise for the reader, I encourage you to modify the <code>introduce</code> method and make it output the text based on the data available. For example, if only <code>@name</code> is available, you would print the sentence without the age part. If only <code>@age</code> is available, you would print the sentence without the name part.</p>
+<h2>Method Chaining at the Class Level</h2>
+<p>We have just learned how to chain our method calls when invoking methods on an instance of a class. But what about chaining the methods at the class level, similar to <code>Model.where(&hellip;).order(&hellip;)</code>? It is pretty much the same process, except that our method declaration will be at the class level instead of the instance level.</p>
+<p>Let us go ahead and do just that, let us design a class that contains class methods that can be chained together. The basic structure for this example will be something like this:</p>
+<pre><code class="language-ruby">class Speaker
   class &lt;&lt; self
 
     def say(what)
@@ -80,8 +560,14 @@ end</code></pre><p>As an exercise for the reader, I encourage you to modify the 
     end
 
   end
-end</code></pre><p>Pretty simple, right? Notice that all of these three methods are class methods. I could have declared them individually with <code>def self.say()&hellip;</code> but for multiple declaration of class methods I feel that it is more concise to have a single <code>class &lt;&lt; self</code> declaration and declare all of the class methods inside of it.</p><p>Great, let us play with it now:</p><pre><code class="language-ruby">&gt; Speaker.say('hello').drink('water').output
-# =&gt; The speaker drinks water and says hello</code></pre><p>And there you have it, worked like a charm.</p><p>Another way to accomplish this without having to explicitly declare the class methods would be to use a module and <code>extend</code> it in our class. By doing this we expose the methods in the module as class methods in our <code>Speaker</code> class:</p><pre><code class="language-ruby">module SpeakerClassMethods
+end</code></pre>
+<p>Pretty simple, right? Notice that all of these three methods are class methods. I could have declared them individually with <code>def self.say()&hellip;</code> but for multiple declaration of class methods I feel that it is more concise to have a single <code>class &lt;&lt; self</code> declaration and declare all of the class methods inside of it.</p>
+<p>Great, let us play with it now:</p>
+<pre><code class="language-ruby">&gt; Speaker.say('hello').drink('water').output
+# =&gt; The speaker drinks water and says hello</code></pre>
+<p>And there you have it, worked like a charm.</p>
+<p>Another way to accomplish this without having to explicitly declare the class methods would be to use a module and <code>extend</code> it in our class. By doing this we expose the methods in the module as class methods in our <code>Speaker</code> class:</p>
+<pre><code class="language-ruby">module SpeakerClassMethods
   def say(what)
     @say = what
     self
@@ -99,12 +585,253 @@ end
 
 class Speaker
   extend SpeakerClassMethods
-end</code></pre><p>And it should work exactly as having explicitly declared the class methods:</p><pre><code class="language-ruby">&gt; Speaker.say('hello').drink('water').output
-# =&gt; The speaker drinks water and says hello</code></pre><p>Great, it worked. As another exercise for the reader, I encourage you to modify the <code>output</code> method and make it output the text based on the data available, similar to the previously suggested exercise for the reader.</p><h2>Conclusion</h2><p>This article has demonstrated how simple and easy it is to incorporate method chaining in Ruby, be it at the instance level or the class level. It also showed the different ways that we can accomplish the same results by using different techniques when adding class-level method chaining. And I hope that it has provided you with enough information for you to be able to apply the same techniques to your own code.</p></body></html><div class="Article_authorBio l-mv4 t-bg-white m-border l-pa3"><div class="l-d-f l-pt3"><a class="l-s5 l-pa0 l-mr3 l-round l-o-h" href="https://www.sitepoint.com/author/tjackiw/"><img src="https://secure.gravatar.com/avatar/ed2af9abb16c6d3c9f5d07cd8f2c8ffd?s=96&#038;d=mm&#038;r=g" width="96" height="96" alt="" class="avatar avatar-96 wp-user-avatar wp-user-avatar-96 photo avatar-default"></a><div class="f-lh-title"><div class="f-c-grey-300">Meet the author</div><div class="f-large"><a class="f-bold f-c-grey-500" href="https://www.sitepoint.com/author/tjackiw/">Thiago Jackiw </a><a class="f-c-grey-500 l-mh1" target="_blank" href="https://twitter.com/tjackiw"><i class="fab fa-twitter"></i></a><a class="f-c-grey-500 l-mh1" target="_blank" href="https://plus.google.com/+tjackiw"><i class="fab fa-google-plus-g"></i></a><a class="f-c-grey-500 l-mh1" target="_blank" href="https://www.linkedin.com/in/tjackiw"><i class="fab fa-linkedin-in"></i></a><a class="f-c-grey-500 l-mh1" target="_blank" href="https://www.reddit.com/user/tjackiw"><i class="fab fa-reddit"></i></a><a class="f-c-grey-500 l-mh1" target="_blank" href="https://github.com/tjackiw"><i class="fab fa-github"></i></a></div></div></div><div class="f-light f-lh-copy l-mt3">Thiago Jackiw is a well-rounded Engineering Manager / Senior Software Engineer and Entrepreneur who enjoys exploring new technologies. He has been working with Ruby since 2006 and currently lives in the San Francisco Bay Area. You should follow him on <a href="https://twitter.com/tjackiw">Twitter</a>, and check his latest open source projects on <a href="https://github.com/tjackiw">GitHub</a>.</div></div></div></div></div></div><div class="article-ads"><div class="l-w-aside-i l-mt3 l-mh3 l-d-n l-d-f--3col l-fd-col l-fs0"><div class="l-mb3"><sp-heading content="Sponsors"></sp-heading><div class="l-w-100 l-mv3 t-bg-white m-border"><div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-765"><div class="proper-ad-unit"><div id="proper-ad-sitepoint_sponsor_1"><script>propertag.cmd.push(function(){proper_display("sitepoint_sponsor_1")})</script></div></div></div></div><div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-763"><div class="proper-ad-unit"><div id="proper-ad-sitepoint_side_1"><script>propertag.cmd.push(function(){proper_display("sitepoint_side_1")})</script></div></div></div></div><div class="ArticleBox u-premium-preview"></div><div class="ArticleAside_row"><div class="widget maestro maestro-content-type-html" id="maestro-728"><div class="proper-ad-unit"><div id="proper-ad-sitepoint_side_2"><script>propertag.cmd.push(function(){proper_display("sitepoint_side_2")})</script></div></div></div><div class="widget maestro maestro-content-type-html" id="maestro-785"><div class="proper-ad-unit Sticky"><div id="proper-ad-sitepoint_side_3"><script>propertag.cmd.push(function(){proper_display("sitepoint_side_3")})</script></div></div></div><ads-weighted widget="21" data='{"NL":[{"id":"584","weight":"50","randMax":50},{"id":"585","weight":"50","randMax":100}]}' fallback="" url="a-guide-to-method-chaining" channelslug="ruby"></ads-weighted></div><div class="ArticleAside_row ArticleAside_newboxads"></div></div></div></div><div class="u-accordion-end"></div><div class="l-d-f l-jc-sb l-w-3col--3col l-mh-auto"><div class="u-showseriesx l-w-100 l-fg1 l-mh3--2col l-mh0--4col"><div class="widget maestro maestro-content-type-html hide-for-tablet-SP hide-for-mobile-SP" id="maestro-649"><span data-sumome-listbuilder-embed-id="6cbb401075afaa88f82a6ddc686573be3368d07928cf833fe1a56254d6ff9849"></span></div><div id="commentsSection" class="l-pa3 t-bg-white"></div></div></div><script>var data="ruby";localStorage&&localStorage.SP_categories&&(data=(data=JSON.parse(localStorage.SP_categories).toString())?data.replace("-",""):"ruby"),oSpP&&oSpP.push("channel",data)</script></div><script>window.dataLayer=window.dataLayer||[],window.dataLayer.push({post_id:5347,title:"A Guide to Method Chaining",category:"Ruby",tags:[],authors:["Thiago Jackiw"],permalink:"https://www.sitepoint.com/a-guide-to-method-chaining/",published:"20130225",sponsored:!1})</script><style type="text/css">.alm-btn-wrap{display:block;text-align:center;padding:10px 0 25px;position:relative}.alm-btn-wrap:after{display:table;clear:both;height:0;width:100%;content:''}.alm-btn-wrap .alm-load-more-btn{font-size:15px;font-weight:600;width:auto;height:42px;line-height:42px;background:#ed7070;color:#fff;border:none;border-radius:4px;margin:0 0 4px;padding:0 20px;display:inline-block;position:relative;-webkit-transition:all .35s ease;transition:all .35s ease;text-align:center;text-decoration:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer}.alm-btn-wrap .alm-load-more-btn.loading,.alm-btn-wrap .alm-load-more-btn:hover{background-color:#e06464;color:#fff;text-decoration:none}.alm-btn-wrap .alm-load-more-btn:active{-webkit-box-shadow:inset 0 2px 1px rgba(0,0,0,.1);box-shadow:inset 0 2px 1px rgba(0,0,0,.1);text-decoration:none}.alm-btn-wrap .alm-load-more-btn.loading{cursor:default;outline:0;padding-left:44px}.alm-btn-wrap .alm-load-more-btn.done{cursor:default;opacity:.15;background-color:#ed7070;outline:0!important;-webkit-box-shadow:none!important;box-shadow:none!important}.alm-btn-wrap .alm-load-more-btn.done:before,.alm-btn-wrap .alm-load-more-btn:before{background:0 0;width:0}.alm-btn-wrap .alm-load-more-btn.loading:before{background:#fff url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/ajax-loader.gif) no-repeat center center;width:30px;height:30px;margin:6px;border-radius:3px;display:inline-block;z-index:0;content:'';position:absolute;left:0;top:0;overflow:hidden;-webkit-transition:width .5s ease-in-out;transition:width .5s ease-in-out}.alm-masonry{display:block;overflow:hidden;clear:both}.ajax-load-more-wrap.blue .alm-load-more-btn{background-color:#0081bf}.ajax-load-more-wrap.blue .alm-load-more-btn.done,.ajax-load-more-wrap.blue .alm-load-more-btn.loading,.ajax-load-more-wrap.blue .alm-load-more-btn:hover{background-color:#0073aa}.ajax-load-more-wrap.green .alm-load-more-btn{background-color:#6fca68}.ajax-load-more-wrap.green .alm-load-more-btn.done,.ajax-load-more-wrap.green .alm-load-more-btn.loading,.ajax-load-more-wrap.green .alm-load-more-btn:hover{background-color:#64b95e}.ajax-load-more-wrap.red .alm-load-more-btn{background-color:#ca4b4b}.ajax-load-more-wrap.red .alm-load-more-btn.done,.ajax-load-more-wrap.red .alm-load-more-btn.loading,.ajax-load-more-wrap.red .alm-load-more-btn:hover{background-color:#b13b3b}.ajax-load-more-wrap.purple .alm-load-more-btn{background-color:#a86bb9}.ajax-load-more-wrap.purple .alm-load-more-btn.done,.ajax-load-more-wrap.purple .alm-load-more-btn.loading,.ajax-load-more-wrap.purple .alm-load-more-btn:hover{background-color:#9963a8}.ajax-load-more-wrap.grey .alm-load-more-btn{background-color:#888}.ajax-load-more-wrap.grey .alm-load-more-btn.done,.ajax-load-more-wrap.grey .alm-load-more-btn.loading,.ajax-load-more-wrap.grey .alm-load-more-btn:hover{background-color:#777}.ajax-load-more-wrap.white .alm-load-more-btn{background-color:#fff;color:#666;border:1px solid #efefef}.ajax-load-more-wrap.white .alm-load-more-btn.done,.ajax-load-more-wrap.white .alm-load-more-btn.loading,.ajax-load-more-wrap.white .alm-load-more-btn:hover{background-color:#efefef;color:#333}.ajax-load-more-wrap.white .alm-load-more-btn.done{border-color:#fff}.ajax-load-more-wrap.infinite .alm-load-more-btn{width:100%;background-color:transparent!important;background-position:center center;background-repeat:no-repeat;background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/spinner.gif);border:none!important;opacity:0;-webkit-transition:opacity .2s ease;transition:opacity .2s ease;-webkit-box-shadow:none!important;box-shadow:none!important;overflow:hidden;text-indent:-9999px;cursor:default!important;outline:0!important}.ajax-load-more-wrap.infinite .alm-load-more-btn:before{display:none!important}.ajax-load-more-wrap.infinite .alm-load-more-btn:active,.ajax-load-more-wrap.infinite .alm-load-more-btn:focus{outline:0}.ajax-load-more-wrap.infinite .alm-load-more-btn.done{opacity:0}.ajax-load-more-wrap.infinite .alm-load-more-btn.loading{opacity:1}.ajax-load-more-wrap.infinite.skype .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/spinner-skype.gif)}.ajax-load-more-wrap.infinite.ring .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/spinner-ring.gif)}.ajax-load-more-wrap.infinite.fading-blocks .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/loader-fading-blocks.gif)}.ajax-load-more-wrap.infinite.fading-circles .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/loader-fading-circles.gif)}.ajax-load-more-wrap.infinite.chasing-arrows .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/spinner-chasing-arrows.gif)}.alm-listing{margin:0;padding:0}.alm-listing .alm-reveal{outline:0}.alm-listing .alm-reveal:after{display:table;clear:both;height:0;width:100%;content:''}.alm-listing .alm-paging-content>li,.alm-listing .alm-reveal>li,.alm-listing>li{background:0 0;margin:0 0 30px;padding:0 0 0 170px;overflow:hidden;position:relative;list-style:none}.alm-listing .alm-paging-content>li.no-img,.alm-listing .alm-reveal>li.no-img,.alm-listing>li.no-img{padding:0}.alm-listing .alm-paging-content>li p,.alm-listing .alm-reveal>li p,.alm-listing>li p{margin:0}.alm-listing .alm-paging-content>li p.entry-meta,.alm-listing .alm-reveal>li p.entry-meta,.alm-listing>li p.entry-meta{margin:0 0 5px;opacity:.75}.alm-listing .alm-paging-content>li h3,.alm-listing .alm-reveal>li h3,.alm-listing>li h3{margin:0 0 10px}.alm-listing .alm-paging-content>li img,.alm-listing .alm-reveal>li img,.alm-listing>li img{position:absolute;left:0;top:0;border-radius:2px}</style><div id="ajax-load-more" class="ajax-load-more-wrap infinite classic" data-alm-id="" data-canonical-url="https://www.sitepoint.com/a-guide-to-method-chaining/" data-slug="a-guide-to-method-chaining" data-post-id="5347" data-localized="ajax_load_more_vars"><div aria-live="polite" class="alm-listing alm-ajax" data-container-type="div" data-repeater="default" data-post-type="post" data-category="ruby,ruby-on-rails" data-post-not-in="5347" data-order="DESC" data-orderby="date" data-offset="0" data-posts-per-page="1" data-scroll="true" data-scroll-distance="-2000" data-max-pages="0" data-pause-override="true" data-pause="true" data-button-label="Older Posts" data-transition="fade" data-transition-container-classes=" next-article l-o-h" data-images-loaded="true"></div><div class="alm-btn-wrap" style="visibility:hidden"><button class="alm-load-more-btn more" rel="next">Older Posts</button></div></div></div><div class="widget maestro maestro-content-type-html" id="maestro-775"><script type="text/html" class="ModalOnce" data-activate-delay="10" data-tracking="free-book" data-min-height="1" data-min-width="1"><div id="free-book-modal" class="reveal-modal medium l-b-n l-br" data-reveal aria-labelledby="Free Book" aria-hidden="true" role="dialog">
+end</code></pre>
+<p>And it should work exactly as having explicitly declared the class methods:</p>
+<pre><code class="language-ruby">&gt; Speaker.say('hello').drink('water').output
+# =&gt; The speaker drinks water and says hello</code></pre>
+<p>Great, it worked. As another exercise for the reader, I encourage you to modify the <code>output</code> method and make it output the text based on the data available, similar to the previously suggested exercise for the reader.</p>
+<h2>Conclusion</h2>
+<p>This article has demonstrated how simple and easy it is to incorporate method chaining in Ruby, be it at the instance level or the class level. It also showed the different ways that we can accomplish the same results by using different techniques when adding class-level method chaining. And I hope that it has provided you with enough information for you to be able to apply the same techniques to your own code.</p></body></html>
+      <div class="Article_authorBio l-mv4 t-bg-white m-border l-pa3">
+        <div class="l-d-f l-pt3">
+          <a class="l-s5 l-pa0 l-mr3 l-round l-o-h" href="https://www.sitepoint.com/author/tjackiw/">
+            <img src="https://secure.gravatar.com/avatar/ed2af9abb16c6d3c9f5d07cd8f2c8ffd?s=96&#038;d=mm&#038;r=g" width="96" height="96" alt="" class="avatar avatar-96 wp-user-avatar wp-user-avatar-96 photo avatar-default" />          </a>
+          <div class="f-lh-title">
+            <div class="f-c-grey-300">Meet the author</div>
+            <div class="f-large">
+              <a class="f-bold f-c-grey-500" href="https://www.sitepoint.com/author/tjackiw/">
+                Thiago Jackiw              </a>
+              <a class="f-c-grey-500 l-mh1" target="_blank" href="https://twitter.com/tjackiw"><i class="fab fa-twitter"></i></a><a class="f-c-grey-500 l-mh1" target="_blank" href="https://plus.google.com/+tjackiw"><i class="fab fa-google-plus-g"></i></a><a class="f-c-grey-500 l-mh1" target="_blank" href="https://www.linkedin.com/in/tjackiw"><i class="fab fa-linkedin-in"></i></a><a class="f-c-grey-500 l-mh1" target="_blank" href="https://www.reddit.com/user/tjackiw"><i class="fab fa-reddit"></i></a><a class="f-c-grey-500 l-mh1" target="_blank" href="https://github.com/tjackiw"><i class="fab fa-github"></i></a>            </div>
+          </div>
+        </div>
+        <div class="f-light f-lh-copy l-mt3">Thiago Jackiw is a well-rounded Engineering Manager / Senior Software Engineer and Entrepreneur who enjoys exploring new technologies. He has been working with Ruby since 2006 and currently lives in the San Francisco Bay Area. 
+
+You should follow him on <a href="https://twitter.com/tjackiw">Twitter</a>, and check his latest open source projects on <a href="https://github.com/tjackiw">GitHub</a>.</div>
+      </div>
+            </div>
+    </div>
+        </div>
+          </div>
+              <div class="article-ads">
+              <div class="l-w-aside-i l-mt3 l-mh3 l-d-n l-d-f--3col l-fd-col l-fs0">
+      <div class="l-mb3">
+            <sp-heading content="Sponsors"></sp-heading>
+    <div class="l-w-100 l-mv3 t-bg-white m-border"><div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-765"><div class="proper-ad-unit">
+  <div id="proper-ad-sitepoint_sponsor_1">
+    <script>
+        propertag.cmd.push(function() { 
+          proper_display('sitepoint_sponsor_1');
+        }); 
+    </script>
+  </div>
+</div></div></div>
+            <div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-763"><div class="proper-ad-unit">
+
+    <div id="proper-ad-sitepoint_side_1"> <script> propertag.cmd.push(function() { proper_display('sitepoint_side_1'); }); </script> 
+
+</div>
+</div></div>      </div>
+      <div class="ArticleBox u-premium-preview"></div>
+      <div class="ArticleAside_row"><div class="widget maestro maestro-content-type-html " id="maestro-728"><div class="proper-ad-unit">
+    <div id="proper-ad-sitepoint_side_2"> <script> propertag.cmd.push(function() { proper_display('sitepoint_side_2'); }); </script> </div>
+</div></div><div class="widget maestro maestro-content-type-html " id="maestro-785"><div class="proper-ad-unit Sticky">
+
+    <div id="proper-ad-sitepoint_side_3"> <script> propertag.cmd.push(function() { proper_display('sitepoint_side_3'); }); </script> </div>
+
+</div></div>        <ads-weighted widget='21' data='{"NL":[{"id":"584","weight":"50","randMax":50},{"id":"585","weight":"50","randMax":100}]}' fallback='' url='a-guide-to-method-chaining' channelSlug='ruby'></ads-weighted></div>
+      <div class="ArticleAside_row ArticleAside_newboxads"></div>
+    </div>
+            </div>
+          </div>
+
+    <div class="u-accordion-end"></div>
+
+    <div class="l-d-f l-jc-sb l-w-3col--3col l-mh-auto">
+      <div class="u-showseriesx l-w-100 l-fg1 l-mh3--2col l-mh0--4col">
+
+        <div class="widget maestro maestro-content-type-html hide-for-tablet-SP hide-for-mobile-SP" id="maestro-649"><span data-sumome-listbuilder-embed-id="6cbb401075afaa88f82a6ddc686573be3368d07928cf833fe1a56254d6ff9849"></span></div>
+                <div id="commentsSection" class="l-pa3 t-bg-white">
+                  </div>
+      </div>
+    </div>
+
+    
+    <script>
+      var data = 'ruby';
+      if (localStorage && localStorage.SP_categories) {
+        data = JSON.parse(localStorage.SP_categories).toString();
+        data = data ? data.replace('-', '') : 'ruby'
+      }
+
+      oSpP && oSpP.push('channel', data);
+    </script>
+    </div>
+
+    <script>
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      post_id: 5347,
+      title: "A Guide to Method Chaining",
+      category: "Ruby",
+      tags: [],
+      authors: ["Thiago Jackiw"],
+      permalink: "https:\/\/www.sitepoint.com\/a-guide-to-method-chaining\/",
+      published: "20130225",
+      sponsored: false    })
+  </script>
+
+    <style type="text/css">.alm-btn-wrap{display:block;text-align:center;padding:10px 0 25px;position:relative}.alm-btn-wrap:after{display:table;clear:both;height:0;width:100%;content:''}.alm-btn-wrap .alm-load-more-btn{font-size:15px;font-weight:600;width:auto;height:42px;line-height:42px;background:#ed7070;color:#fff;border:none;border-radius:4px;margin:0 0 4px;padding:0 20px;display:inline-block;position:relative;-webkit-transition:all .35s ease;transition:all .35s ease;text-align:center;text-decoration:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer}.alm-btn-wrap .alm-load-more-btn.loading,.alm-btn-wrap .alm-load-more-btn:hover{background-color:#e06464;color:#fff;text-decoration:none}.alm-btn-wrap .alm-load-more-btn:active{-webkit-box-shadow:inset 0 2px 1px rgba(0,0,0,.1);box-shadow:inset 0 2px 1px rgba(0,0,0,.1);text-decoration:none}.alm-btn-wrap .alm-load-more-btn.loading{cursor:default;outline:0;padding-left:44px}.alm-btn-wrap .alm-load-more-btn.done{cursor:default;opacity:.15;background-color:#ed7070;outline:0!important;-webkit-box-shadow:none!important;box-shadow:none!important}.alm-btn-wrap .alm-load-more-btn.done:before,.alm-btn-wrap .alm-load-more-btn:before{background:0 0;width:0}.alm-btn-wrap .alm-load-more-btn.loading:before{background:#fff url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/ajax-loader.gif) no-repeat center center;width:30px;height:30px;margin:6px;border-radius:3px;display:inline-block;z-index:0;content:'';position:absolute;left:0;top:0;overflow:hidden;-webkit-transition:width .5s ease-in-out;transition:width .5s ease-in-out}.alm-masonry{display:block;overflow:hidden;clear:both}.ajax-load-more-wrap.blue .alm-load-more-btn{background-color:#0081bf}.ajax-load-more-wrap.blue .alm-load-more-btn.done,.ajax-load-more-wrap.blue .alm-load-more-btn.loading,.ajax-load-more-wrap.blue .alm-load-more-btn:hover{background-color:#0073aa}.ajax-load-more-wrap.green .alm-load-more-btn{background-color:#6fca68}.ajax-load-more-wrap.green .alm-load-more-btn.done,.ajax-load-more-wrap.green .alm-load-more-btn.loading,.ajax-load-more-wrap.green .alm-load-more-btn:hover{background-color:#64b95e}.ajax-load-more-wrap.red .alm-load-more-btn{background-color:#ca4b4b}.ajax-load-more-wrap.red .alm-load-more-btn.done,.ajax-load-more-wrap.red .alm-load-more-btn.loading,.ajax-load-more-wrap.red .alm-load-more-btn:hover{background-color:#b13b3b}.ajax-load-more-wrap.purple .alm-load-more-btn{background-color:#a86bb9}.ajax-load-more-wrap.purple .alm-load-more-btn.done,.ajax-load-more-wrap.purple .alm-load-more-btn.loading,.ajax-load-more-wrap.purple .alm-load-more-btn:hover{background-color:#9963a8}.ajax-load-more-wrap.grey .alm-load-more-btn{background-color:#888}.ajax-load-more-wrap.grey .alm-load-more-btn.done,.ajax-load-more-wrap.grey .alm-load-more-btn.loading,.ajax-load-more-wrap.grey .alm-load-more-btn:hover{background-color:#777}.ajax-load-more-wrap.white .alm-load-more-btn{background-color:#fff;color:#666;border:1px solid #efefef}.ajax-load-more-wrap.white .alm-load-more-btn.done,.ajax-load-more-wrap.white .alm-load-more-btn.loading,.ajax-load-more-wrap.white .alm-load-more-btn:hover{background-color:#efefef;color:#333}.ajax-load-more-wrap.white .alm-load-more-btn.done{border-color:#fff}.ajax-load-more-wrap.infinite .alm-load-more-btn{width:100%;background-color:transparent!important;background-position:center center;background-repeat:no-repeat;background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/spinner.gif);border:none!important;opacity:0;-webkit-transition:opacity .2s ease;transition:opacity .2s ease;-webkit-box-shadow:none!important;box-shadow:none!important;overflow:hidden;text-indent:-9999px;cursor:default!important;outline:0!important}.ajax-load-more-wrap.infinite .alm-load-more-btn:before{display:none!important}.ajax-load-more-wrap.infinite .alm-load-more-btn:active,.ajax-load-more-wrap.infinite .alm-load-more-btn:focus{outline:0}.ajax-load-more-wrap.infinite .alm-load-more-btn.done{opacity:0}.ajax-load-more-wrap.infinite .alm-load-more-btn.loading{opacity:1}.ajax-load-more-wrap.infinite.skype .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/spinner-skype.gif)}.ajax-load-more-wrap.infinite.ring .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/spinner-ring.gif)}.ajax-load-more-wrap.infinite.fading-blocks .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/loader-fading-blocks.gif)}.ajax-load-more-wrap.infinite.fading-circles .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/loader-fading-circles.gif)}.ajax-load-more-wrap.infinite.chasing-arrows .alm-load-more-btn{background-image:url(https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/img/spinner-chasing-arrows.gif)}.alm-listing{margin:0;padding:0}.alm-listing .alm-reveal{outline:0}.alm-listing .alm-reveal:after{display:table;clear:both;height:0;width:100%;content:''}.alm-listing .alm-paging-content>li,.alm-listing .alm-reveal>li,.alm-listing>li{background:0 0;margin:0 0 30px;padding:0 0 0 170px;overflow:hidden;position:relative;list-style:none}.alm-listing .alm-paging-content>li.no-img,.alm-listing .alm-reveal>li.no-img,.alm-listing>li.no-img{padding:0}.alm-listing .alm-paging-content>li p,.alm-listing .alm-reveal>li p,.alm-listing>li p{margin:0}.alm-listing .alm-paging-content>li p.entry-meta,.alm-listing .alm-reveal>li p.entry-meta,.alm-listing>li p.entry-meta{margin:0 0 5px;opacity:.75}.alm-listing .alm-paging-content>li h3,.alm-listing .alm-reveal>li h3,.alm-listing>li h3{margin:0 0 10px}.alm-listing .alm-paging-content>li img,.alm-listing .alm-reveal>li img,.alm-listing>li img{position:absolute;left:0;top:0;border-radius:2px}</style><div id="ajax-load-more" class="ajax-load-more-wrap infinite classic"  data-alm-id="" data-canonical-url="https://www.sitepoint.com/a-guide-to-method-chaining/" data-slug="a-guide-to-method-chaining" data-post-id="5347"  data-localized="ajax_load_more_vars"><div aria-live="polite" class="alm-listing alm-ajax" data-container-type="div" data-repeater="default" data-post-type="post" data-category="ruby,ruby-on-rails" data-post-not-in="5347" data-order="DESC" data-orderby="date" data-offset="0" data-posts-per-page="1" data-scroll="true" data-scroll-distance="-2000" data-max-pages="0" data-pause-override="true" data-pause="true" data-button-label="Older Posts" data-transition="fade" data-transition-container-classes=" next-article l-o-h" data-images-loaded="true"></div><div class="alm-btn-wrap" style="visibility: hidden;"><button class="alm-load-more-btn more " rel="next">Older Posts</button></div></div>  </div>
+    <div class="widget maestro maestro-content-type-html " id="maestro-775"><script type="text/html" class="ModalOnce" data-activate-delay="10" data-tracking="free-book" data-min-height="1" data-min-width="1">
+  <div id="free-book-modal" class="reveal-modal medium l-b-n l-br" data-reveal aria-labelledby="Free Book" aria-hidden="true" role="dialog">
     <free-book-content book_cover="https://d2sis3lil8ndrq.cloudfront.net/books/4c7f6303-60e8-45dc-a95b-aae08a4f32a3_medium.png" heading="Free Book. All Yours." book_title="JavaScript Best Practice">
       <p class="f-small l-mb3">Write powerful, clean and maintainable JavaScript with clear, practical lessons in application architecture, package management, tools, shorthands, callbacks, classes, flow control and much more.</p>
       <p class="f-small l-mb0">Worth $11.95 on Amazon. Yours FREE!</p>
     </free-book-content>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
     <free-book-form slug="js-best-practice-reader" />
-  </div></script></div><footer role="contentinfo"><div class="l-w-100 l-d-f Footer-bg"><div class="l-d-f l-fw-w l-mh-auto"><div class="l-d-f l-fw-w l-mt4 l-w-100 l-pa3 l-w-3col--4col l-jc-sb l-jc-sa--4col"><ul><li class="t-ls-n"><div class="f-c-white f-large f-bold l-mb2">Stuff we do</div></li><li class="l-ml3 f-c-grey-300 l-mb2"><a class="Footer-link f-small" href="/premium/">Premium</a></li><li class="l-ml3 f-c-grey-300 l-mb2"><a class="Footer-link f-small" href="/community/">Forums</a></li><li class="l-ml3 f-c-grey-300 l-mb2"><a class="Footer-link f-small" href="https://sitepoint.typeform.com/to/fNY7XG">Corporate memberships</a></li><li class="l-ml3 f-c-grey-300 l-mb2"><a class="Footer-link f-small" href="https://sitepoint.tapfiliate.com/">Become an affiliate</a></li></ul><ul><li class="t-ls-n"><div class="f-c-white f-large f-bold l-mb2">About</div></li><li class="l-ml3 f-c-grey-300 l-mb2"><a class="Footer-link f-small" href="/about-us/">Our story</a></li><li class="l-ml3 f-c-grey-300 l-mb2"><a class="Footer-link f-small" href="/press/">Press room</a></li></ul><ul><li class="t-ls-n"><div class="f-c-white f-large f-bold l-mb2">Contact</div></li><li class="l-ml3 f-c-grey-300 l-mb2"><a class="Footer-link f-small" href="/contact-us/">Contact us</a></li><li class="l-ml3 f-c-grey-300 l-mb2"><a class="Footer-link f-small" href="https://sitepoint.zendesk.com/hc/en-us">FAQ</a></li><li class="l-ml3 f-c-grey-300 l-mb2"><a class="Footer-link f-small" href="https://sitepoint.typeform.com/to/HtAXVN">Publish your book with us</a></li><li class="l-ml3 f-c-grey-300 l-mb2"><a class="Footer-link f-small" href="https://sitepoint.typeform.com/to/DMmYfn">Write an article for us</a></li><li class="l-ml3 f-c-grey-300 l-mb2"><a class="Footer-link f-small" href="/advertise/">Advertise</a></li></ul><ul><li class="t-ls-n"><div class="f-c-white f-large f-bold l-mb2">Legals</div></li><li class="l-ml3 f-c-grey-300 l-mb2"><a class="Footer-link f-small" href="/legals/">Terms of use</a></li><li class="l-ml3 f-c-grey-300 l-mb2"><a class="Footer-link f-small" href="/privacy-policy/">Privacy policy</a></li></ul></div><div class="l-d-n l-d-b--4col l-as-cen Footer-hr"></div><div class="l-mt4 l-pa3 l-w-1col--4col"><ul class="t-ls-n l-d-f l-fw-w l-d-b--3col"><li><div class="f-c-white f-large f-bold l-mb2 l-mr3">Connect</div></li><li class="f-center"><a class="f-c-grey-300" href="https://www.facebook.com/sitepoint" rel="noopener" target="_blank"><i class="fab fa-facebook-square l-i4"></i> </a><a class="l-pl3 f-c-grey-300" href="http://twitter.com/sitepointdotcom" rel="noopener" target="_blank"><i class="fab fa-twitter-square l-i4"></i> </a><a class="l-pl3 f-c-grey-300" href="https://www.sitepoint.com/feed/"><i class="fas fa-rss-square l-i4"></i> </a><a class="l-pl3 f-c-grey-300" href="https://plus.google.com/+sitepoint" rel="noopener" target="_blank"><i class="fab fa-google-plus-square l-i4"></i></a></li><p class="f-c-grey-300 l-mh-auto l-ml3--2col l-ml0--3col l-mv3--4col f-small f-center">&copy; 2000 &ndash; 2019 SitePoint Pty. Ltd.</p></ul></div></div></div></footer><script type="text/javascript">!function(n,e){if(SP_GPT_Slots.length){var t=!1;n.cmd.push(function(){n.pubads().addEventListener("slotRenderEnded",function(n){t||(gaEventQueue.track("CanSeeAds","dfpFirstRendered",{nonInteraction:!0}),t=!0)})})}}(googletag)</script><div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-746"><div class="proper-ad-unit ad-sticky"><div id="proper-ad-sitepoint_main_1"><script>propertag.cmd.push(function(){proper_display("sitepoint_main_1")})</script></div></div></div><script type="text/javascript">var ratingsL10n={plugin_url:"https://www.sitepoint.com/wp-content/plugins/wp-postratings",ajax_url:"https://www.sitepoint.com/wp-admin/admin-ajax.php",text_wait:"Please rate only 1 item at a time.",image:"thumbs",image_ext:"gif",max:"2",show_loading:"1",show_fading:"1",custom:"1"},ratings_1_mouseover_image=new Image;ratings_1_mouseover_image.src="https://www.sitepoint.com/wp-content/plugins/wp-postratings/images/thumbs/rating_1_over.gif";var ratings_2_mouseover_image=new Image;ratings_2_mouseover_image.src="https://www.sitepoint.com/wp-content/plugins/wp-postratings/images/thumbs/rating_2_over.gif"</script><script type="text/javascript" src="https://www.sitepoint.com/wp-content/plugins/wp-postratings/js/postratings-js.js?ver=1.85"></script><script type="text/javascript" src="//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/scripts-foot-6e8feb0d357d51d669d194de6aae4530.js?ver=4.9.8"></script><script type="text/javascript" src="//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/bundle-8c91a5c26dd85948a16a560af21aef25.js"></script><script type="text/javascript" src="//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/article-ba6b0e32b94bc8805a429662be25e5e6.js"></script><script type="text/javascript" src="https://www.sitepoint.com/wp-includes/js/wp-embed.min.js?ver=4.9.8"></script><script type="text/javascript">var alm_localize={ajaxurl:"https://www.sitepoint.com/wp-admin/admin-ajax.php",alm_nonce:"31dd674f4c",pluginurl:"https://www.sitepoint.com/wp-content/plugins/ajax-load-more",scrolltop:"false",speed:"250",results_text:"Displaying page {num} of {total}.",no_results_text:"No results found."},ajax_load_more_vars={id:"ajax-load-more"}</script><script type="text/javascript" src="https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/dist/js/ajax-load-more.min.js?ver=5.1.2"></script></body></html>
+  </div>
+</script></div>    <footer role="contentinfo">
+  <div class="l-w-100 l-d-f Footer-bg">
+    <div class="l-d-f l-fw-w l-mh-auto">
+      <div class="l-d-f l-fw-w l-mt4 l-w-100 l-pa3 l-w-3col--4col l-jc-sb l-jc-sa--4col">
+        <ul>
+          <li class="t-ls-n">
+            <div class="f-c-white f-large f-bold l-mb2">Stuff we do</div>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/premium/">Premium</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/community/">Forums</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="https://sitepoint.typeform.com/to/fNY7XG">Corporate memberships</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="https://sitepoint.tapfiliate.com/">Become an affiliate</a>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="t-ls-n">
+            <div class="f-c-white f-large f-bold l-mb2">About</div>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/about-us/">Our story</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/press/">Press room</a>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="t-ls-n">
+            <div class="f-c-white f-large f-bold l-mb2">Contact</div>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/contact-us/">Contact us</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="https://sitepoint.zendesk.com/hc/en-us">FAQ</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="https://sitepoint.typeform.com/to/HtAXVN">Publish your book with us</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="https://sitepoint.typeform.com/to/DMmYfn">Write an article for us</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/advertise/">Advertise</a>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="t-ls-n">
+            <div class="f-c-white f-large f-bold l-mb2">Legals</div>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/legals/">Terms of use</a>
+          </li>
+          <li class="l-ml3 f-c-grey-300 l-mb2">
+            <a class="Footer-link f-small" href="/privacy-policy/">Privacy policy</a>
+          </li>
+        </ul>
+      </div>
+      <div class="l-d-n l-d-b--4col l-as-cen Footer-hr" >
+      </div>
+      <div class="l-mt4 l-pa3 l-w-1col--4col">
+        <ul class="t-ls-n l-d-f l-fw-w l-d-b--3col">
+          <li>
+            <div class="f-c-white f-large f-bold l-mb2 l-mr3">Connect</div>
+          </li>
+          <li class="f-center">
+            <a class="f-c-grey-300" href="https://www.facebook.com/sitepoint" rel="noopener" target="_blank">
+              <i class="fab fa-facebook-square l-i4"></i>
+            </a>
+            <a class="l-pl3 f-c-grey-300" href="http://twitter.com/sitepointdotcom" rel="noopener" target="_blank">
+              <i class="fab fa-twitter-square l-i4"></i>
+            </a>
+            <a class="l-pl3 f-c-grey-300" href="https://www.sitepoint.com/feed/">
+              <i class="fas fa-rss-square l-i4"></i>
+            </a>
+            <a class="l-pl3 f-c-grey-300" href="https://plus.google.com/+sitepoint" rel="noopener" target="_blank">
+              <i class="fab fa-google-plus-square l-i4"></i>
+            </a>
+          </li>
+          <p class="f-c-grey-300 l-mh-auto l-ml3--2col l-ml0--3col l-mv3--4col f-small f-center">
+            &copy; 2000 &ndash; 2019 SitePoint Pty. Ltd.
+          </p>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+        <script type="text/javascript">
+    (function(googletag, SP_GPT_Slots) {
+      if(!SP_GPT_Slots.length) return;
+
+      var SP_GPT_First_Slot_Rendered = false;
+      googletag.cmd.push(function(){
+        googletag.pubads().addEventListener("slotRenderEnded", function(e){
+          if (!SP_GPT_First_Slot_Rendered) {
+            gaEventQueue.track("CanSeeAds", "dfpFirstRendered", {"nonInteraction": true});
+            SP_GPT_First_Slot_Rendered = true;
+          }
+        });
+      });
+
+    })(googletag, SP_GPT_Slots);
+    </script>
+<div class="widget maestro maestro-content-type-html hide-for-mobile-SP" id="maestro-746"><div class="proper-ad-unit ad-sticky">
+    <div id="proper-ad-sitepoint_main_1"> <script> propertag.cmd.push(function() { proper_display('sitepoint_main_1'); }); </script> </div>
+</div></div><script type='text/javascript'>
+/* <![CDATA[ */
+var ratingsL10n = {"plugin_url":"https:\/\/www.sitepoint.com\/wp-content\/plugins\/wp-postratings","ajax_url":"https:\/\/www.sitepoint.com\/wp-admin\/admin-ajax.php","text_wait":"Please rate only 1 item at a time.","image":"thumbs","image_ext":"gif","max":"2","show_loading":"1","show_fading":"1","custom":"1"};
+var ratings_1_mouseover_image=new Image();ratings_1_mouseover_image.src="https://www.sitepoint.com/wp-content/plugins/wp-postratings/images/thumbs/rating_1_over.gif";var ratings_2_mouseover_image=new Image();ratings_2_mouseover_image.src="https://www.sitepoint.com/wp-content/plugins/wp-postratings/images/thumbs/rating_2_over.gif";;
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.sitepoint.com/wp-content/plugins/wp-postratings/js/postratings-js.js?ver=1.85'></script>
+<script type='text/javascript' src='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/scripts-foot-6e8feb0d357d51d669d194de6aae4530.js?ver=4.9.8'></script>
+<script type='text/javascript' src='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/bundle-8c91a5c26dd85948a16a560af21aef25.js'></script>
+<script type='text/javascript' src='//www.sitepoint.com/wp-content/themes/sitepoint/assets/javascripts/article-ba6b0e32b94bc8805a429662be25e5e6.js'></script>
+<script type='text/javascript' src='https://www.sitepoint.com/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var alm_localize = {"ajaxurl":"https:\/\/www.sitepoint.com\/wp-admin\/admin-ajax.php","alm_nonce":"31dd674f4c","pluginurl":"https:\/\/www.sitepoint.com\/wp-content\/plugins\/ajax-load-more","scrolltop":"false","speed":"250","results_text":"Displaying page {num} of {total}.","no_results_text":"No results found."};
+var ajax_load_more_vars = {"id":"ajax-load-more"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.sitepoint.com/wp-content/plugins/ajax-load-more/core/dist/js/ajax-load-more.min.js?ver=5.1.2'></script>
+
+  </body>
+</html>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Object Caching 19/76 objects using memcached
+Page Caching using memcached 
+Content Delivery Network via Amazon Web Services: CloudFront: dab1nmslvvntp.cloudfront.net
+
+Served from: www.sitepoint.com @ 2019-10-04 15:35:03 by W3 Total Cache
+-->

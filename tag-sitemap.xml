@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>/tags/testing/</loc>
+        <lastmod>2019-10-13T19:29:32.736Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>/tags/javascript/</loc>
+        <lastmod>2019-10-13T19:29:32.736Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>/tags/design-pattern/</loc>
         <lastmod>2019-10-13T16:00:14.253Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,13 +39,6 @@
 
     <url>
         <loc>/tags/Flux/</loc>
-        <lastmod>2019-10-13T15:56:52.014Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>/tags/javascript/</loc>
         <lastmod>2019-10-13T15:56:52.014Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -236,13 +243,6 @@
     <url>
         <loc>/tags/UI-UX/</loc>
         <lastmod>2019-10-13T15:55:45.197Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>/tags/testing/</loc>
-        <lastmod>2019-10-13T15:55:40.290Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
